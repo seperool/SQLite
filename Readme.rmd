@@ -1,0 +1,55 @@
+---
+title: "Readme.rmd"
+author: "Sergio Pedro R Oliveira"
+date: "Fevereiro de 2022"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+# Objetivo
+
+Estudo dirigido de SQL, utilizando SQLite.
+
+# Livro de referência
+
+Introdução a linguagem SQL - abordagem pratica para iniciantes
+
+# Assuntos por capitulos
+
+## Capítulo 4
+
+**SELECT**:\
+Extrai dados de uma tabela e exibe os resultados.\
+Uso do (*) para especificar todas as colunas.\
+Uso do **AS** para criar nova coluna, tambem serve para mudar nome de coluna.\
+Uso da função *round()* para arredondamentos.
+
+Obs.: na expressão o uso do ponto para representar o numero decimal.
+
+
+
+**Operadores matematicos**:
+
+```{r echo=FALSE}
+library(knitr)
+Operador <- c("+","-","*","/","%")
+Descrição <- c("soma", "subtração",  "multiplicação", "divisão", "resto da divisão")
+op_mat <- data.frame(Operador, Descrição)
+op_mat
+```
+
+
+
+**Concatenação de textos**:\
+Mescla dois ou mais dados.\
+O operador de concatenação é especificado por um **pipe duplo** (||).\
+Após a mesclagem de dados o retorno é no dado tipo texto.\
+
+Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
+
+
+
+## Capítulo 5
