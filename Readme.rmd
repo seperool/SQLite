@@ -3,6 +3,8 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "Fevereiro de 2022"
 output:
+  md_document:
+    variant: markdown_github
   pdf_document: default
   word_document: default
   html_document:
