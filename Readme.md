@@ -44,3 +44,15 @@ Obs.: na expressão o uso do ponto para representar o numero decimal.
 Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
 
 ## Capítulo 5
+
+**WHERE**:  
+
+# Andamento dos Estudos
+
+## Assunto em andamento:
+
+## Em andamento:
+
+## Vazios:
+
+## Finalizando detalhes:
