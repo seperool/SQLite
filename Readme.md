@@ -95,7 +95,7 @@ tabela verdade:
     ## 5         NOT
     ## 6     IS NULL
     ## 7 IS NOT NULL
-    ##                                                               descricao
+    ##                                                               Descricao
     ## 1             Verifica se todas as expressões booleanas são verdadeiras
     ## 2                    Verifica se alguma expressão booleana é verdadeira
     ## 3 Verifica se um valor se encaixa inclusivamente dentro de um intervalo

@@ -6,9 +6,9 @@ output:
   md_document:
     variant: markdown_github
   word_document: default
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 # Objetivo
@@ -103,7 +103,7 @@ data.frame(p=c("V","V","F","F"),NOT_p= c("F","F","V","V"), q=c("V","F","V","F"),
 
 ```{r echo=FALSE}
 Operador <- c("AND","OR","BETWEEN","IN","NOT","IS NULL","IS NOT NULL")
-descricao <- c("Verifica se todas as expressões booleanas são verdadeiras",
+Descricao <- c("Verifica se todas as expressões booleanas são verdadeiras",
                "Verifica se alguma expressão booleana é verdadeira",
                "Verifica se um valor se encaixa inclusivamente dentro de um intervalo",
                "Verifica se um valor existe dentro de uma lista de valores",
@@ -111,7 +111,7 @@ descricao <- c("Verifica se todas as expressões booleanas são verdadeiras",
                "Verifica se um valor é nulo","Verifica se um valor não é nulo")
 Exemplo <- c("x AND y","x OR y","a BETWEEN x AND y","a IN (x,y,w,z)","a NOT IN (x,y,w,z)",
              "a IS NULL","a IS NOT NULL")
-op_logic <- data.frame(Operador,descricao,Exemplo)
+op_logic <- data.frame(Operador,Descricao,Exemplo)
 op_logic
 ```
 
