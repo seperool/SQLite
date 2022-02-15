@@ -123,12 +123,3 @@ Uso de filtro WHERE.
 ## Vazios:
 
 ## Finalizando detalhes:
-
--   SQL-WHERE-IN-TEXTO-lista.sql  
--   SQL-WHERE-IN-mais_de_um_criterio_de_filtro-LISTA.sql  
--   SQL-WHERE-LIKE-caracteres_curingas.sql  
--   SQL-WHERE-NOT_IN-mais_de_um_criterio_de_filtro-LISTA.sql  
--   SQL-WHERE-OR-mais_de_um_criterio_de_filtro.sql  
--   SQL-WHERE-TEXTO.sql  
--   SQL-WHERE-filtro_atraves_mat_resto_div.sql  
--   SQL-WHERE-length.sql  
