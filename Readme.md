@@ -112,6 +112,34 @@ tabela verdade:
     ## 6          a IS NULL
     ## 7      a IS NOT NULL
 
+-   uso de *booleanos* no filtro, em conjunto com NOT para transformar
+    um true em false (1 -> 0).  
+
+    -   **true** = 1.  
+
+    -   **false** = 0.  
+
+obs.: SQLite só aceita 1 e 0. MySQL aceita true e false.  
+
+-   Tratamento de NULL, valor nulo.
+
+    -   funções para trabalhar com NULL:
+
+        -   **IS NULL**  
+            Filtra valores NULL.  
+
+        -   **IS NOT NULL**  
+            Filtra valores não NULL.  
+
+        -   **IS NULL OR**  
+            Adiciona NULL a filtragem, junto de outros criterios.  
+
+        -   *coalesce*  
+            Transforma valores NULL em outra coisa.  
+
+Obs.: em situação normal, o valor NULL é ignorado pelos filtros
+matematicos, se não especificado.  
+
 # Andamento dos Estudos
 
 ## Assunto em andamento:
