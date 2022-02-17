@@ -17,9 +17,13 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
 -   Uso do (\*) para especificar todas as colunas.  
 
 -   Uso do **AS** para criar nova coluna, tambem serve para mudar nome
-    de coluna.  
+    de coluna, na consulta.  
 
--   Uso da função *round()* para arredondamentos.
+-   Uso da função *round()* para arredondamentos.  
+
+-   Uso da função *coalesce()* para alterar o valor NULL de determinada
+    coluna para outro valor estabelecido. Usado em conjunto com o **AS**
+    para trocar o nome da coluna, na consulta.  
 
 Obs.: na expressão o uso do ponto para representar o numero decimal.
 
@@ -140,11 +144,15 @@ obs.: SQLite só aceita 1 e 0. MySQL aceita true e false.
 Obs.: em situação normal, o valor NULL é ignorado pelos filtros
 matematicos, se não especificado.  
 
+## Capítulo 6
+
+**GROUP BY** e **ORDER BY**
+
 # Andamento dos Estudos
 
 ## Assunto em andamento:
 
-Uso de filtro WHERE.  
+GROUP BY e ORDER BY, agregação de dados.  
 
 ## Em andamento:
 
