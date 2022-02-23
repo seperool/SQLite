@@ -99,7 +99,7 @@ tabela verdade:
     ## 5         NOT
     ## 6     IS NULL
     ## 7 IS NOT NULL
-    ##                                                               Descricao
+    ##                                                       Descricao_op_logc
     ## 1             Verifica se todas as expressões booleanas são verdadeiras
     ## 2                    Verifica se alguma expressão booleana é verdadeira
     ## 3 Verifica se um valor se encaixa inclusivamente dentro de um intervalo
@@ -146,7 +146,46 @@ matematicos, se não especificado.
 
 ## Capítulo 6
 
-**GROUP BY** e **ORDER BY**
+**GROUP BY** e **ORDER BY**  
+Agragação de dados, também conhecido como totalização, resumo ou
+agrupamento.  
+
+## GROUP BY
+
+-   Agrupamento de registros.  
+-   É comum ser usado em conjunto com **WHERE** para selecionar dados.  
+-   Normalmente é usado com conjunto com funções tipicas de sumarização
+    (resumo), como:  
+
+<!-- -->
+
+    ##            Funcao
+    ## 1          avg(X)
+    ## 2        count(X)
+    ## 3        count(*)
+    ## 4          max(X)
+    ## 5          min(X)
+    ## 6          sum(X)
+    ## 7 group_concat(X)
+    ##                                           Descricao_func_tipica_groupby
+    ## 1 Calcula a media de todos os valores da coluna X (Omite valores nulos)
+    ## 2                       Contao o numero de valore não nulos da coluna X
+    ## 3                                              Conta o numero registros
+    ## 4             Encontra o valor maximo da coluna X (Omite valores nulos)
+    ## 5             Encontra o valor minimo da coluna X (Omite valores nulos)
+    ## 6          Calcula a soma dos valores da coluna X (Omite valores nulos)
+    ## 7                         Concatena os valores não nulos da coluna X.**
+
+**Obs.: Você também pode fornecer um segundo argumento que especifica um
+separador, como a virgula.  
+- Existem duas formas possiveis de escrever os argumentos de **GROUP
+BY**:  
+1. Escrevendo o nome das colunas especificadas em **SELECT**.  
+2. Dando o numero da ordem das colunas que aparecem especificadas em
+**SELECT\*\*.  
+Essa segunda forma não funciona no Oracle e no SQL Server.  
+
+## ORDER BY
 
 # Andamento dos Estudos
 

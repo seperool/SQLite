@@ -5,10 +5,10 @@ date: "Fevereiro de 2022"
 output:
   html_document:
     df_print: paged
-  word_document: default
   pdf_document: default
   md_document:
     variant: markdown_github
+  word_document: default
 ---
 
 # Objetivo
@@ -106,7 +106,7 @@ data.frame(p=c("V","V","F","F"),NOT_p= c("F","F","V","V"), q=c("V","F","V","F"),
 
 ```{r echo=FALSE}
 Operador <- c("AND","OR","BETWEEN","IN","NOT","IS NULL","IS NOT NULL")
-Descricao <- c("Verifica se todas as expressões booleanas são verdadeiras",
+Descricao_op_logc <- c("Verifica se todas as expressões booleanas são verdadeiras",
                "Verifica se alguma expressão booleana é verdadeira",
                "Verifica se um valor se encaixa inclusivamente dentro de um intervalo",
                "Verifica se um valor existe dentro de uma lista de valores",
@@ -114,7 +114,7 @@ Descricao <- c("Verifica se todas as expressões booleanas são verdadeiras",
                "Verifica se um valor é nulo","Verifica se um valor não é nulo")
 Exemplo <- c("x AND y","x OR y","a BETWEEN x AND y","a IN (x,y,w,z)","a NOT IN (x,y,w,z)",
              "a IS NULL","a IS NOT NULL")
-op_logic <- data.frame(Operador,Descricao,Exemplo)
+op_logic <- data.frame(Operador,Descricao_op_logc,Exemplo)
 op_logic
 ```
 
@@ -148,7 +148,35 @@ Obs.: em situação normal, o valor NULL é ignorado pelos filtros matematicos, 
 
 ## Capítulo 6
 
-**GROUP BY** e **ORDER BY**
+**GROUP BY** e **ORDER BY**\
+Agragação de dados, também conhecido como totalização, resumo ou agrupamento.\
+
+## GROUP BY
+- Agrupamento de registros.\
+- É comum ser usado em conjunto com **WHERE** para selecionar dados.\
+- Normalmente é usado com conjunto com funções tipicas de sumarização (resumo), como:\
+```{r echo=FALSE}
+library(base)
+Funcao <- c('avg(X)','count(X)','count(*)','max(X)','min(X)','sum(X)','group_concat(X)')
+Descricao_func_tipica_groupby <- c('Calcula a media de todos os valores da coluna X (Omite valores nulos)',
+               'Contao o numero de valore não nulos da coluna X',
+               'Conta o numero registros',
+               'Encontra o valor maximo da coluna X (Omite valores nulos)',
+               'Encontra o valor minimo da coluna X (Omite valores nulos)',
+               'Calcula a soma dos valores da coluna X (Omite valores nulos)',
+               'Concatena os valores não nulos da coluna X.**')
+funcs_agregacao <- data.frame(Funcao, Descricao_func_tipica_groupby)
+funcs_agregacao
+
+```
+**Obs.: Você também pode fornecer um segundo argumento que especifica um separador, como a virgula.\
+- Existem duas formas possiveis de escrever os argumentos de **GROUP BY**:\
+  1. Escrevendo o nome das colunas especificadas em **SELECT**.\
+  2. Dando o numero da ordem das colunas que aparecem especificadas em **SELECT**.\
+  Essa segunda forma não funciona no Oracle e no SQL Server.\
+
+
+## ORDER BY
 
 \newpage
 
