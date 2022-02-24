@@ -179,19 +179,36 @@ agrupamento.
 **Obs.: Você também pode fornecer um segundo argumento que especifica um
 separador, como a virgula.  
 - Existem duas formas possiveis de escrever os argumentos de **GROUP
-BY**:  
-1. Escrevendo o nome das colunas especificadas em **SELECT**.  
-2. Dando o numero da ordem das colunas que aparecem especificadas em
-**SELECT\*\*.  
-Essa segunda forma não funciona no Oracle e no SQL Server.  
+BY\*\*:  
+
+1.  Escrevendo o nome das colunas especificadas em **SELECT**.  
+
+2.  Dando o numero da ordem das colunas que aparecem especificadas em
+    **SELECT**.  
+    Essa segunda forma não funciona no Oracle e no SQL Server.  
 
 ## ORDER BY
+
+-   Ordenando registros.  
+
+-   Por padrão a instrução ORDER BY organiza por ordem crescente os
+    registros.  
+
+-   Operadores **ORDER BY**:
+
+    1.  **ASC**  
+        Organiza os registros. em ordem crescente  
+
+    2.  **DESC**  
+        Organiza os registros em ordem decrescente.  
+
+## HAVING
 
 # Andamento dos Estudos
 
 ## Assunto em andamento:
 
-GROUP BY e ORDER BY, agregação de dados.  
+HAVING.  
 
 ## Em andamento:
 
