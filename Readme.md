@@ -10,7 +10,7 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
 
 ## Capítulo 4
 
-**SELECT**:  
+### **SELECT**: 
 
 -   Extrai dados de uma tabela e exibe os resultados.  
 
@@ -27,7 +27,7 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
 
 Obs.: na expressão o uso do ponto para representar o numero decimal.
 
-**Operadores matematicos**:
+### **Operadores matematicos**:
 
     ##   Operador        Descrição
     ## 1        +             soma
@@ -36,7 +36,7 @@ Obs.: na expressão o uso do ponto para representar o numero decimal.
     ## 4        /          divisão
     ## 5        % resto da divisão
 
-**Concatenação de textos**:  
+### **Concatenação de textos**: 
 
 -   Mescla dois ou mais dados.  
 
@@ -49,7 +49,7 @@ Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
 
 ## Capítulo 5
 
-**WHERE**:  
+### **WHERE**: 
 
 -   **Filtro** de dados(registros) para consulta.  
 
@@ -150,7 +150,7 @@ matematicos, se não especificado.
 Agragação de dados, também conhecido como totalização, resumo ou
 agrupamento.  
 
-## GROUP BY
+### GROUP BY
 
 -   Agrupamento de registros.  
 -   É comum ser usado em conjunto com **WHERE** para selecionar dados.  
@@ -187,7 +187,7 @@ BY\*\*:
     **SELECT**.  
     Essa segunda forma não funciona no Oracle e no SQL Server.  
 
-## ORDER BY
+### ORDER BY
 
 -   Ordenando registros.  
 
@@ -202,7 +202,7 @@ BY\*\*:
     2.  **DESC**  
         Organiza os registros em ordem decrescente.  
 
-## HAVING
+### HAVING
 
 -   Filtra registros de acordo com um valor agregado.  
 -   Substitui o **WHERE** para filtrar valores agregados por **GROUP
@@ -211,12 +211,40 @@ BY\*\*:
     função de agregação ao usar o **HAVING**.  
     ex.: HAVING **SUM**(precipitation) > 30  
 
-## DISTINCT
+### DISTINCT
 
 -   Instrução para obter registros distintos, sem duplicatas, sem
     valores repetidos.  
 
+## Capítulo 7
+
+### CASE
+
+-   Esse comando nos permite substituir o valor de uma coluna por outro
+    valor, de acordo com uma ou mais condições.  
+-   Equivalente ao **IF**, **ELIF**, **ELSE** de outras linguagens.  
+-   Sintaxe do **CASE**:  
+    **CASE**  
+    **WHEN** (*condição*) **THEN** (*valor1*)  
+    **ELSE** (*valor2*)  
+    **END** **AS** (*nome da nova coluna*)  
+
+### Truque **CASE** **ZERO**/**NULL**
+
+-   Onde é possivel colocar a instrução CASE dentro de uma função de
+    agregação, substituindo assim o uso do **WHERE**.  
+-   Aplicando assim mais de um filtro distinto na mesma pesquisa.  
+-   Sintaxe:  
+    **SUM**(**CASE** **WHEN** (*condição*) **THEN** (*valor1*) **ELSE**
+    (*valor2*) **END**) **AS** (*nome da nova coluna*)  
+
+## Capítulo 8
+
+### Join
+
 # Andamento dos Estudos
+
+Estudando intrução **CASE**.  
 
 ## Assunto em andamento:
 
