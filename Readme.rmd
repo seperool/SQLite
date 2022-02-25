@@ -6,9 +6,9 @@ output:
   pdf_document: default
   md_document:
     variant: markdown_github
-  word_document: default
   html_document:
     df_print: paged
+  word_document: default
 ---
 
 # Objetivo
@@ -190,13 +190,19 @@ funcs_agregacao
   Organiza os registros em ordem decrescente.\
 
 ## HAVING
+- Filtra registros de acordo com um valor agregado.\
+- Substitui o **WHERE** para filtrar valores agregados por **GROUP BY**.\
+- Sintaxe no Oracle é ligeiramente diferente, é preciso especificar a função de agregação ao usar o **HAVING**.\
+ex.: HAVING **SUM**(precipitation) > 30\
+
+## DISTINCT
+- Instrução para obter registros distintos, sem duplicatas, sem valores repetidos.\
+
 \newpage
 
 # Andamento dos Estudos
 
 ## Assunto em andamento:
-
-HAVING.\
 
 ## Em andamento:
 

@@ -204,11 +204,21 @@ BY\*\*:
 
 ## HAVING
 
+-   Filtra registros de acordo com um valor agregado.  
+-   Substitui o **WHERE** para filtrar valores agregados por **GROUP
+    BY**.  
+-   Sintaxe no Oracle é ligeiramente diferente, é preciso especificar a
+    função de agregação ao usar o **HAVING**.  
+    ex.: HAVING **SUM**(precipitation) > 30  
+
+## DISTINCT
+
+-   Instrução para obter registros distintos, sem duplicatas, sem
+    valores repetidos.  
+
 # Andamento dos Estudos
 
 ## Assunto em andamento:
-
-HAVING.  
 
 ## Em andamento:
 
