@@ -3,9 +3,9 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "Fevereiro de 2022"
 output:
-  pdf_document: default
   md_document:
     variant: markdown_github
+  pdf_document: default
   word_document: default
   html_document:
     df_print: paged
@@ -216,15 +216,20 @@ ex.: HAVING **SUM**(precipitation) > 30\
 - Sintaxe:\
 **SUM**(**CASE** **WHEN** (*condição*) **THEN** (*valor1*) **ELSE** (*valor2*) **END**) **AS** (*nome da nova coluna*)\
 
+- É possivel dentro da *condição* fazer uso de operadores logicos:\
+  - **OR**\
+  - **AND**\
+  - **NOT**\
+
 \newpage
 ## Capítulo 8
 
-### Join
+### JOIN
 
 \newpage
 # Andamento dos Estudos
 
-Estudando intrução **CASE**.\
+Estudando intrução **JOIN**.\
 
 ## Assunto em andamento:
 

@@ -233,18 +233,26 @@ BY\*\*:
 
 -   Onde é possivel colocar a instrução CASE dentro de uma função de
     agregação, substituindo assim o uso do **WHERE**.  
+
 -   Aplicando assim mais de um filtro distinto na mesma pesquisa.  
+
 -   Sintaxe:  
     **SUM**(**CASE** **WHEN** (*condição*) **THEN** (*valor1*) **ELSE**
     (*valor2*) **END**) **AS** (*nome da nova coluna*)  
 
+-   É possivel dentro da *condição* fazer uso de operadores logicos:  
+
+    -   **OR**  
+    -   **AND**  
+    -   **NOT**  
+
 ## Capítulo 8
 
-### Join
+### JOIN
 
 # Andamento dos Estudos
 
-Estudando intrução **CASE**.  
+Estudando intrução **JOIN**.  
 
 ## Assunto em andamento:
 
