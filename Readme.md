@@ -252,7 +252,7 @@ BY\*\*:
 
 # Andamento dos Estudos
 
-Estudando intrução **JOIN**.  
+Estudando instrução **JOIN**.  
 
 ## Assunto em andamento:
 

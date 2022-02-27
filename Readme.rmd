@@ -5,10 +5,10 @@ date: "Fevereiro de 2022"
 output:
   md_document:
     variant: markdown_github
-  pdf_document: default
   word_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 # Objetivo
@@ -229,7 +229,7 @@ ex.: HAVING **SUM**(precipitation) > 30\
 \newpage
 # Andamento dos Estudos
 
-Estudando intrução **JOIN**.\
+Estudando instrução **JOIN**.\
 
 ## Assunto em andamento:
 
