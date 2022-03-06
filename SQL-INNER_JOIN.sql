@@ -17,3 +17,6 @@ ON customer.CUSTOMER_ID = customer_order.CUSTOMER_ID; /*Definindo coluna CHAVE*/
 
 /*Une as tabelas CUSTOMER e CUSTOMER_ORDER, atraves da coluna chave CUSTOMER_ID*/
 /*possibilitando assim uma consulta mais completa*/
+
+/*Obs.: o resultado da consulta so retorna registros que existam nas duas tabelas*/
+/*para retornar todos os registos usar LEFT JOIN*/
