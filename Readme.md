@@ -1,3 +1,8 @@
+Readme.rmd
+================
+Sergio Pedro R Oliveira
+2022-03-06
+
 # Objetivo
 
 Estudo dirigido de SQL, utilizando SQLite.
@@ -25,7 +30,7 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
     coluna para outro valor estabelecido. Usado em conjunto com o **AS**
     para trocar o nome da coluna, na consulta.  
 
-Obs.: na expressão o uso do ponto para representar o numero decimal.
+Obs.: na expressão o uso do ponto para representar o numero decimal.  
 
 ### **Operadores matematicos**:
 
@@ -250,9 +255,60 @@ BY\*\*:
 
 ### JOIN
 
+1.  Banco de dados relacional
+
+-   Duas ou mais tabelas se relacionam (relacionais) determinado campo
+    de uma tabela aponta para o campo de outra tabela.  
+-   Colunas *Chave* são as colunas que interligam as tabelas, contem
+    valores unicos que guardam identificações que não vão se repetir,
+    identificadores de determinado objeto.  
+-   Dizemos que uma tabela é pai da outra quando a segunda tabela
+    depende de informações da primeira tabela. a primeira tabela é pai e
+    a segunda tabela é filha.  
+-   Tipos de relacionamento entre tabela-pai e tabela-filha:  
+    -   *Um para muitos*. (a mais comum)  
+        **Um** registro da tabela-pai pode estar associado a
+        **diversos** registros da tabela-filha.  
+
+    -   *Um para um*.  
+        **Um** registro da tabela-pai pode estar associado a **um**
+        registro da tabela-filha.  
+
+    -   *Muitos para muitos*.  
+        **Diversos** registros da tabela-pai podem estar associados a
+        **diversos** registros da tabela-filha.  
+
+2.  **INNER JOIN**
+
+-   Une duas tabelas, relacionadas, para efetuar consultas mais
+    eficientes.  
+
+-   A mescla é feita apartir de algum campo comum, para que os registros
+    se alinhem, colunas *chaves*.  
+
+-   Sintaxe:  
+    **SELECT** (colunas consultadas das duas tabelas),
+    *tabela-pai.coluna_chave*  
+    **FROM** *tabela-pai* **INNER JOIN** *tabela-filha*  
+    **ON** *tabela-pai.coluna_chave* **=**
+    *tabela-filha.coluna_chave*;  
+
+-   Obs.:
+
+    -   No **SELECT** é preciso selecionar a *coluna_chave*, tanto faz
+        se for da tabela-pai ou filha.  
+    -   É dentro do **FROM** que é executado o **JOIN INNER**.  
+    -   Quanto a exibição dos resultados, só é exibido registros que
+        existam nas duas tabelas.  
+    -   Caso queiramos incluir consultas que mostrem todos os registros,
+        mesmo os que só existam em uma tabela, podemos usar **LEFT
+        JOIN**.  
+
+3.  **LEFT JOIN**
+
 # Andamento dos Estudos
 
-Estudando instrução **JOIN**.  
+Estudando instrução **JOIN** - **LEFT JOIN**.  
 
 ## Assunto em andamento:
 
