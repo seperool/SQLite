@@ -255,7 +255,7 @@ BY\*\*:
 
 ### JOIN
 
-1.  Banco de dados relacional
+#### Banco de dados relacional
 
 -   Duas ou mais tabelas se relacionam (relacionais) determinado campo
     de uma tabela aponta para o campo de outra tabela.  
@@ -278,13 +278,13 @@ BY\*\*:
         **Diversos** registros da tabela-pai podem estar associados a
         **diversos** registros da tabela-filha.  
 
-2.  **INNER JOIN**
+#### **INNER JOIN**
 
 -   Une duas tabelas, relacionadas, para efetuar consultas mais
     eficientes.  
 
 -   A mescla é feita apartir de algum campo comum, para que os registros
-    se alinhem, colunas *chaves*.  
+    se alinhem, colunas *chave*.  
 
 -   Sintaxe:  
     **SELECT** (colunas consultadas das duas tabelas),
@@ -304,11 +304,38 @@ BY\*\*:
         mesmo os que só existam em uma tabela, podemos usar **LEFT
         JOIN**.  
 
-3.  **LEFT JOIN**
+#### **LEFT JOIN**
+
+1.  **LEFT JOIN**  
+
+-   Mescla duas tabelas, uma há esquerda.  
+-   Diferente do **INNER JOIN**, não omite registros. Registros sem sem
+    associação entre as tabelas recebe valor **NULL**.  
+-   Sintaxe:  
+    **SELECT** (colunas consultadas das duas tabelas),
+    *tabela-pai.coluna_chave*  
+    **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A
+    DIREITA)*  
+    **ON** *tabela-pai.coluna_chave* **=**
+    *tabela-filha.coluna_chave*;  
+
+2.  **LEFT JOIN** + **WHERE NULL**  
+
+-   Pode ser usado em conjunto com filtro **WHERE** procurando valores
+    **NULL** para achar registros sem relação entre tabelas.  
+    ex.: pedidos sem cliente ou clientes sem pedidos.  
+-   Sintaxe:  
+    **SELECT** (colunas consultadas das duas tabelas),
+    *tabela-pai.coluna_chave*  
+    **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A
+    DIREITA)*  
+    **ON** *tabela-pai.coluna_chave* **=**
+    *tabela-filha.coluna_chave*;  
+    **WHERE** (coluna_procurada ou *coluna_chave*) = **NULL**
 
 # Andamento dos Estudos
 
-Estudando instrução **JOIN** - **LEFT JOIN**.  
+Estudando instrução **JOIN** - operadores **JOIN**.  
 
 ## Assunto em andamento:
 
