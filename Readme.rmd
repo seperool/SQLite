@@ -4,13 +4,13 @@ author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
   github_document: default
-  word_document: default
-  html_document:
-    df_print: paged
+  pdf_document: default
   md_document:
     variant: markdown_github
-  pdf_document: default
   odt_document: default
+  html_document:
+    df_print: paged
+  word_document: default
 ---
 
 # Objetivo
@@ -260,28 +260,82 @@ ex.: HAVING **SUM**(precipitation) > 30\
 #### **LEFT JOIN**
 
   1. **LEFT JOIN**\
-  - Mescla duas tabelas, uma há esquerda.\
-  - Diferente do **INNER JOIN**, não omite registros. Registros sem sem associação entre as tabelas recebe valor **NULL**.\
-  - Sintaxe:\
-  **SELECT** (colunas consultadas das duas tabelas), *tabela-pai.coluna_chave* \
-  **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A DIREITA)*\
-  **ON** *tabela-pai.coluna_chave* **=** *tabela-filha.coluna_chave*;\
+    - Mescla duas tabelas, uma há esquerda.\
+    - Mantem todos os registros da tabela a esquerda.\
+    - Diferente do **INNER JOIN**, não omite registros. Registros sem associação entre as tabelas recebe valor **NULL**.\
+    - Sintaxe:\
+    **SELECT** (colunas consultadas das duas tabelas), *tabela-pai.coluna_chave* \
+    **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A DIREITA)*\
+    **ON** *tabela-pai.coluna_chave* **=** *tabela-filha.coluna_chave*;\
     
   2. **LEFT JOIN** + **WHERE NULL**\
-  - Pode ser usado em conjunto com filtro **WHERE** procurando valores **NULL** para achar registros sem relação entre tabelas.\
-ex.: pedidos sem cliente ou clientes sem pedidos.\
-  - Sintaxe:\
-  **SELECT** (colunas consultadas das duas tabelas), *tabela-pai.coluna_chave* \
-  **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A DIREITA)*\
-  **ON** *tabela-pai.coluna_chave* **=** *tabela-filha.coluna_chave*;\
-  **WHERE** (coluna_procurada ou *coluna_chave*) = **NULL**
+    - Pode ser usado em conjunto com filtro **WHERE** procurando valores **NULL** para achar registros sem relação entre tabelas.\
+    ex.: pedidos sem cliente ou clientes sem pedidos.\
+    - Sintaxe:\
+    **SELECT** (colunas consultadas das duas tabelas), *tabela-pai.coluna_chave* \
+    **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A DIREITA)*\
+    **ON** *tabela-pai.coluna_chave* **=** *tabela-filha.coluna_chave*;\
+    **WHERE** (coluna_procurada ou *coluna_chave*) = **NULL**\
 
+#### Outros tipos de operador **JOIN**
+Esses outros operadores não tem suporte no SQLite, porem tem nos outros banco de dados.\
 
+  1. **RIGHT JOIN**
+    - Mescla duas tabelas, uma há direita.\
+    - Mantem todos os registros da tabela da direita.\
+    - Diferente do **INNER JOIN**, não omite registros. Registros sem associação entre as tabelas recebe valor **NULL**.\
+  
+  2. **OUTER JOIN**
+    - **OUTER JOIN** é um operador de associação externa completa.\
+    - Inclui todos os registros das duas tabelas.\
+    - Executa o **LEFT JOIN** e o **RIGHT JOIN** simultanemente.\
+    - Busca registros orfãs nas duas direções.\
+
+#### Associando várias tabelas
+  
+  1. Associação de diversas tabelas **INNER JOIN**\
+    - Associa três ou mais tabelas atraves de colunas *CHAVES*, entre elas.\
+    - Podem haver diversos tipos de relacionamentos entre as tabelas, dos mais complexos.\
+    Ex.: tabela-filha com dois ou mais tabelas-pai; tabela-pai que é filha de outra tabela; etc.\
+    - O importante é identificar os relacionamentos entre tabelas para poder mescla-las.\
+    - Sintaxe:\
+    **SELECT**\
+    (colunas que deseja obter),\
+    *tabela.coluna_chave1*,\
+    *tabela.coluna_chave2*,\
+    ...\
+    **FROM** *tabela1*\
+    **INNER JOIN** *tabela2*\
+    **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*\
+    **INNER JOIN** *tabela3*\
+    **ON** *tabela2.coluna_chave2* **=** *tabela3.coluna_chave2*\
+
+  2. Agrupando **JOIN**s\
+    - Apenas adicionar GROUP_BY ao final.\
+    - Determinando quais devem ser as colunas a serem agrupadas.\
+    - Por conseguencia é possivel usar as funções de agrupamento para conseguir novas informações.\
+    - Sintaxe:\
+    **SELECT**\
+    *coluna1*,\
+    *coluna2*,\
+    ...\
+    **FROM** *tabela1*\
+    **INNER JOIN** *tabela2*\
+    **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*\
+    **INNER JOIN** *tabela3*\
+    **ON** *tabela2.coluna_chave2* **=** *tabela3.coluna_chave2*\
+    **GROUP BY** *coluna1*, *coluna 2* *(ou 1, 2)*\
+  
+  3. Associação de diversos **LEFT JOIN**s\
+    - É simples, basta ao inves de usar **INNER JOIN**, utilizar **LEFT JOIN**.\
+    - Utilizado para mostrar todos os registros da mescla de tabelas.\
+    - A sintaxe é basicamente a mesma da *associação de diversos* **INNER JOIN**.\
+  
 \newpage
 
 # Andamento dos Estudos
 
-Estudando instrução **JOIN** - operadores **JOIN**.\
+Estudando instrução **JOIN** - associando varias tabelas.\
 
 ## Assunto em andamento:
 
