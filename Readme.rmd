@@ -4,13 +4,13 @@ author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
   github_document: default
-  pdf_document: default
   md_document:
     variant: markdown_github
+  word_document: default
+  pdf_document: default
   odt_document: default
   html_document:
     df_print: paged
-  word_document: default
 ---
 
 # Objetivo
@@ -24,7 +24,7 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
 \newpage
 # Assuntos por capitulos e resumos
 
-## Capítulo 4
+## Capítulo 4 - **SELECT**
 
 ### **SELECT**:\
 
@@ -66,9 +66,7 @@ Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
 
 \newpage
 
-## Capítulo 5
-
-### **WHERE**:\
+## Capítulo 5 - **WHERE**:
 
 - **Filtro** de dados(registros) para consulta.\
 
@@ -147,9 +145,7 @@ Obs.: em situação normal, o valor NULL é ignorado pelos filtros matematicos, 
 
 \newpage
 
-## Capítulo 6
-
-**GROUP BY** e **ORDER BY**\
+## Capítulo 6 - **GROUP BY** e **ORDER BY**
 Agragação de dados, também conhecido como totalização, resumo ou agrupamento.\
 
 ### GROUP BY
@@ -200,7 +196,7 @@ ex.: HAVING **SUM**(precipitation) > 30\
 - Instrução para obter registros distintos, sem duplicatas, sem valores repetidos.\
 
 \newpage
-## Capítulo 7
+## Capítulo 7 - **CASE**
 
 ### CASE
 - Esse comando nos permite substituir o valor de uma coluna por outro valor, de acordo com uma ou mais condições.\
@@ -223,11 +219,9 @@ ex.: HAVING **SUM**(precipitation) > 30\
   - **NOT**\
 
 \newpage
-## Capítulo 8
+## Capítulo 8 - **JOIN**
 
-### JOIN
-
-#### Banco de dados relacional
+### Banco de dados relacional
   
   - Duas ou mais tabelas se relacionam (relacionais) determinado campo de uma tabela aponta para o campo de outra tabela.\
   - Colunas *Chave* são as colunas que interligam as tabelas, contem valores unicos que guardam identificações que não vão se repetir, identificadores de determinado objeto.\
@@ -242,7 +236,7 @@ ex.: HAVING **SUM**(precipitation) > 30\
     - *Muitos para muitos*.\
     **Diversos** registros da tabela-pai podem estar associados a **diversos** registros da tabela-filha.\
 
-#### **INNER JOIN**
+### **INNER JOIN**
 
   - Une duas tabelas, relacionadas, para efetuar consultas mais eficientes.\
   - A mescla é feita apartir de algum campo comum, para que os registros se alinhem, colunas *chave*.\
@@ -257,7 +251,7 @@ ex.: HAVING **SUM**(precipitation) > 30\
     - Quanto a exibição dos resultados, só é exibido registros que existam nas duas tabelas.\
     - Caso queiramos incluir consultas que mostrem todos os registros, mesmo os que só existam em uma tabela, podemos usar **LEFT JOIN**.\
     
-#### **LEFT JOIN**
+### **LEFT JOIN**
 
   1. **LEFT JOIN**\
     - Mescla duas tabelas, uma há esquerda.\
@@ -277,7 +271,7 @@ ex.: HAVING **SUM**(precipitation) > 30\
     **ON** *tabela-pai.coluna_chave* **=** *tabela-filha.coluna_chave*;\
     **WHERE** (coluna_procurada ou *coluna_chave*) = **NULL**\
 
-#### Outros tipos de operador **JOIN**
+### Outros tipos de operador **JOIN**
 Esses outros operadores não tem suporte no SQLite, porem tem nos outros banco de dados.\
 
   1. **RIGHT JOIN**
@@ -291,7 +285,7 @@ Esses outros operadores não tem suporte no SQLite, porem tem nos outros banco d
     - Executa o **LEFT JOIN** e o **RIGHT JOIN** simultanemente.\
     - Busca registros orfãs nas duas direções.\
 
-#### Associando várias tabelas
+### Associando várias tabelas
   
   1. Associação de diversas tabelas **INNER JOIN**\
     - Associa três ou mais tabelas atraves de colunas *CHAVES*, entre elas.\
@@ -333,9 +327,13 @@ Esses outros operadores não tem suporte no SQLite, porem tem nos outros banco d
   
 \newpage
 
+## Capitulo 9 - Design de banco de dados
+
+\newpage
+
 # Andamento dos Estudos
 
-Estudando instrução **JOIN** - associando varias tabelas.\
+Estudando instrução Design de banco de dados.\
 
 ## Assunto em andamento:
 

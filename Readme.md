@@ -1,7 +1,7 @@
 Readme.rmd
 ================
 Sergio Pedro R Oliveira
-2022-03-08
+2022-03-09
 
 # Objetivo
 
@@ -13,7 +13,7 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
 
 # Assuntos por capitulos e resumos
 
-## Capítulo 4
+## Capítulo 4 - **SELECT**
 
 ### **SELECT**: 
 
@@ -52,9 +52,7 @@ Obs.: na expressão o uso do ponto para representar o numero decimal.
 
 Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
 
-## Capítulo 5
-
-### **WHERE**: 
+## Capítulo 5 - **WHERE**:
 
 -   **Filtro** de dados(registros) para consulta.  
 
@@ -149,9 +147,8 @@ obs.: SQLite só aceita 1 e 0. MySQL aceita true e false.
 Obs.: em situação normal, o valor NULL é ignorado pelos filtros
 matematicos, se não especificado.  
 
-## Capítulo 6
+## Capítulo 6 - **GROUP BY** e **ORDER BY**
 
-**GROUP BY** e **ORDER BY**  
 Agragação de dados, também conhecido como totalização, resumo ou
 agrupamento.  
 
@@ -221,7 +218,7 @@ BY\*\*:
 -   Instrução para obter registros distintos, sem duplicatas, sem
     valores repetidos.  
 
-## Capítulo 7
+## Capítulo 7 - **CASE**
 
 ### CASE
 
@@ -251,11 +248,9 @@ BY\*\*:
     -   **AND**  
     -   **NOT**  
 
-## Capítulo 8
+## Capítulo 8 - **JOIN**
 
-### JOIN
-
-#### Banco de dados relacional
+### Banco de dados relacional
 
 -   Duas ou mais tabelas se relacionam (relacionais) determinado campo
     de uma tabela aponta para o campo de outra tabela.  
@@ -278,7 +273,7 @@ BY\*\*:
         **Diversos** registros da tabela-pai podem estar associados a
         **diversos** registros da tabela-filha.  
 
-#### **INNER JOIN**
+### **INNER JOIN**
 
 -   Une duas tabelas, relacionadas, para efetuar consultas mais
     eficientes.  
@@ -304,7 +299,7 @@ BY\*\*:
         mesmo os que só existam em uma tabela, podemos usar **LEFT
         JOIN**.  
 
-#### **LEFT JOIN**
+### **LEFT JOIN**
 
 1.  **LEFT JOIN**  
     - Mescla duas tabelas, uma há esquerda.  
@@ -332,7 +327,7 @@ BY\*\*:
     *tabela-filha.coluna_chave*;  
     **WHERE** (coluna_procurada ou *coluna_chave*) = **NULL**  
 
-#### Outros tipos de operador **JOIN**
+### Outros tipos de operador **JOIN**
 
 Esses outros operadores não tem suporte no SQLite, porem tem nos outros
 banco de dados.  
@@ -348,7 +343,7 @@ banco de dados.
     - Executa o **LEFT JOIN** e o **RIGHT JOIN** simultanemente.  
     - Busca registros orfãs nas duas direções.  
 
-#### Associando várias tabelas
+### Associando várias tabelas
 
 1.  Associação de diversas tabelas **INNER JOIN**  
     - Associa três ou mais tabelas atraves de colunas *CHAVES*, entre
@@ -395,9 +390,11 @@ banco de dados.
     - A sintaxe é basicamente a mesma da *associação de diversos*
     **INNER JOIN**.  
 
+## Capitulo 9 - Design de banco de dados
+
 # Andamento dos Estudos
 
-Estudando instrução **JOIN** - associando varias tabelas.  
+Estudando instrução Design de banco de dados.  
 
 ## Assunto em andamento:
 
