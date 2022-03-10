@@ -527,9 +527,30 @@ Criação de tabelas.
 
 ### Criando VIEWS
 
+-   Quando salvamos uma consulta em um banco de dados, ela se chama
+    *view*.  
+-   Podemos consultar uma *view* como se ela fosse uma tabela, ou seja,
+    chamar a *view*, apelicar:  
+    -   **SELECT**
+    -   **WHERE**
+    -   **CASE**
+    -   …
+-   Sintaxe:  
+    **CREATE VIEW** *nome_da_view* **AS**  
+    **SELECT**  
+    *nome_da_tabela.coluna1*  
+    *nome_da_tabela.coluna2*  
+    …  
+    **FROM** *tabela1*  
+    **INNER JOIN** *tabela2*  
+    **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*  
+    …;  
+
+## Capitulo 10 - Gerenciando dados
+
 # Andamento dos Estudos
 
-Estudando instrução Design de banco de dados - Criação de VIEWS.  
+Estudando Gerenciado dados.  
 
 ## Assunto em andamento:
 
