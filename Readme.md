@@ -1,8 +1,3 @@
-Readme.rmd
-================
-Sergio Pedro R Oliveira
-2022-03-09
-
 # Objetivo
 
 Estudo dirigido de SQL, utilizando SQLite.
@@ -52,7 +47,7 @@ Obs.: na expressão o uso do ponto para representar o numero decimal.
 
 Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
 
-## Capítulo 5 - **WHERE**:
+## Capítulo 5 - **WHERE**
 
 -   **Filtro** de dados(registros) para consulta.  
 
@@ -392,9 +387,116 @@ banco de dados.
 
 ## Capitulo 9 - Design de banco de dados
 
+### Planejando um banco de dados
+
+-   O design de banco de dados serve para **criar** novas tabelas, assim
+    como **inserir**, **atualizar** e **excluir** registros.  
+-   Uma dica para o design é fazer o diagrama RE (relaciomento de
+    entidade), no qual exibe as tabelas e como elas estão
+    relacionadas.  
+-   Principais perguntas que devem ser feitas para planejar um banco de
+    dados:  
+    1.  Perguntas relativas ao design:  
+
+    -   Quais são os requisitos no negocio?  
+    -   Que tabelas são necessarias para atender a esses requisitos?  
+    -   Que colunas cada tabela conterá?  
+    -   Como as tabelas serão *normalizadas*?  
+        A *normalização* é a separação dos diferentes tipos de dados em
+        suas proprias tabelas em vez de serem inseridos na mesma
+        tabela.  
+    -   Quais serão seus relacionamentos pai/filho?  
+
+    1.  Perguntas relacionadas aos dados:  
+
+    -   Quantos dados serão fornecidos nessas tabelas?  
+    -   Quem ou o que fornecerá os dados para as tabelas?  
+    -   De onde virão os dados?  
+    -   Precisamos de processos que preencham automaticamente as
+        tabelas?  
+
+    1.  Perguntas relacionadas a segurança:  
+
+    -   Quem deve ter acesso a esse banco de dados?  
+    -   Quem deve ter acesso a que tabelas? Acesso somente de leitura?
+        Acesso de gravação?  
+    -   Esse banco de dados é critico para as operações empresariais?  
+    -   Que planos de *backup* temos para o caso de desastre/falha?  
+    -   As alterações feitas nas tabelas devem ser registradas?  
+    -   Se o banco de dados for usado por sites ou aplicativos *web*,
+        isso é seguro?  
+-   SQLite tem poucos recursos de segurança, porem os bancos de dados
+    centralizados lidam com essas áreas.  
+
+### Chave Primaria e Chave Externa
+
+1.  Chave Primaria:
+
+-   A chave primaria em uma tabela é um campo especial (ou uma
+    combinação de campos) que fornecem uma identidade exclusiva para
+    cada registro.  
+-   Chave primaria serve para definir relacionamento e costuma formar
+    base de associação.  
+-   Chave primaria aumenta a eficienca nas consultas do software de
+    banco de dados.  
+-   Não são permitidas duplicatas da chave primaria, ou seja, não pode
+    ter dois registros iguais. Se isso acontecer ocorrerá um **ERRO**.  
+
+1.  Chave Externa:
+
+-   Chave externa não é o mesmo que chave primaria, a chave primaria
+    existe na tabela-pai, a chave externa existe na tabela-filha.  
+-   A chave externa de uma tabela-filha aponta para a chave primaria de
+    uma tabela-pai.  
+-   A chave externa não exige exclusividade, relacinamento “*um para
+    muitos*”.  
+
+1.  Chave Primaria vs Chave Externa:
+
+-   A chave externa e a chave primaria não precisam compartilhar o mesmo
+    nome.  
+
+### Esquema
+
+Dicas para montar e analisar esquematicos:  
+- O diagrama exibe as tabelas, as colunas e os relacinamentos.  
+- Todas as chaves primarias e chaves externas são conectadas por setas.
+Saindo da chave primaria e apontando para a chave externa.  
+- As setas demonstram com as tabelas-pai fornecem dados para as
+tabelas-filha.  
+- Analisar duas, ou três, tabelas por vez, para evitar se perder.  
+- Para notar se esta bem *normalizado* o banco de dados, verificar se as
+chaves primarias/externas estão sendo usadas de maneira eficientes.  
+
+### Criando um novo banco de dados
+
+-   Extensão de banco de dados “.db”.
+
+#### Criando TABLE
+
+Criação de tabelas.  
+
+-   Ao criar tabelas é preciso criar as colunas e definir o tipo, as
+    restrições e regras elas devem seguir.  
+
+-   Sintaxe:  
+    **CREATE** **TABLE** *nome_da_tabela*(  
+    *nome_da_coluna1* tipo regra restrição,  
+    *nome_da_coluna2* tipo regra restrição,  
+    …  
+    );  
+
+-   tipos:
+
+-   regras:
+
+-   restrições:
+
+    -   AUTOINCREMENT Adiciona valores automaticamente no registro.
+
 # Andamento dos Estudos
 
-Estudando instrução Design de banco de dados.  
+Estudando instrução Design de banco de dados - Criação de tabelas.  
 
 ## Assunto em andamento:
 
