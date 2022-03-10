@@ -486,17 +486,50 @@ Criação de tabelas.
     …  
     );  
 
--   tipos:
+-   tipos:  
 
--   regras:
+    -   **INTEGER**  
+        Valores inteiros.  
+    -   **REAL**  
+        Ponto flutuante.  
+    -   **VARCHAR**  
+        Texto com ate 100 caracteres.  
+    -   **BOOLEAN**  
+        Aceita valores booleanos, 1 é verdadeiro e 0 é falso.  
+    -   **TIME**  
+        Tempo.  
 
--   restrições:
+-   regras:  
 
-    -   AUTOINCREMENT Adiciona valores automaticamente no registro.
+    -   **PRIMARY KEY**  
+        -   *Chave primaria*. Determina coluna(s) identificadoras da
+            tabela.  
+        -   Também usado para forjar relações entre tabelas
+            (identificador de tabela-pai).  
+    -   **FOREIGN KEY**  
+        -   *Chave externa*. Determina as relações entre tabelas-pai e
+            filha.  
+        -   Sintaxe:  
+            **REFERENCES** *nome_da_tabela-pai*
+            (*coluna_chave_da_tabela-pai*)  
+    -   **NOT NULL**
+        -   Não aceitar valor **NULL**.  
+    -   **DEFAULT**
+        -   Determina um valor default para o registro, muito util para
+            tipo BOOLEANO.  
+        -   Sintaxe:  
+            **DEFAULT** (0)  
+
+-   restrições:  
+
+    -   **AUTOINCREMENT**  
+        Adiciona valores automaticamente no registro.  
+
+### Criando VIEWS
 
 # Andamento dos Estudos
 
-Estudando instrução Design de banco de dados - Criação de tabelas.  
+Estudando instrução Design de banco de dados - Criação de VIEWS.  
 
 ## Assunto em andamento:
 
