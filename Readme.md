@@ -550,7 +550,7 @@ Criação de tabelas.
 
 # Andamento dos Estudos
 
-Estudando Gerenciado dados.  
+Estudando Gerenciando dados.  
 
 ## Assunto em andamento:
 
