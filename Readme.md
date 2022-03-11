@@ -548,9 +548,40 @@ Criação de tabelas.
 
 ## Capitulo 10 - Gerenciando dados
 
+As principais ações do gerenciamento de dados são inserir, excluir e
+atualizar registros.  
+
+-   **INSERT**  
+    -   O comando serve para inserir registros no banco de dados.  
+    -   Campos não preenchidos no registro, recebem valor **NULL**, ou
+        valores pré-determinados.  
+    -   Se um campo não for preenchido e tiver a restrição **NOT NULL**,
+        o **INSERT** falhara, pois não tem valor pré-definido e não pode
+        ser desconsiderado aquele registro.  
+    -   Sintaxe:  
+        **INSERT INTO** *nome_da_tabela* (*coluna1_do_registro*,
+        *coluna2_do_registro*)  
+        **VALUES** (‘*dado_1*’,‘*dado_2*’);  
+-   Multiplas inserções  
+    -   É possivel inserir diversos registros de uma só vez.  
+    -   Processo muito útil para inserções automatizada atraves de
+        linguagens de programação, como:  
+        -   Python  
+        -   R  
+        -   Java  
+        -   …  
+    -   Sintaxe:  
+        **INSERT INTO** *nome_da_tabela* (*coluna1_do_registro*,
+        *coluna2_do_registro*)  
+        **VALUES**  
+        (‘*dado_1*’,‘*dado_2*’),  
+        (‘*dado_3*’,‘*dado_4*’),  
+        …,  
+        (‘*dado_n*’,‘*dado_n+1*’);  
+
 # Andamento dos Estudos
 
-Estudando Gerenciando dados.  
+Estudando - Gerenciando dados.  
 
 ## Assunto em andamento:
 
