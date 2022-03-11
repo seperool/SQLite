@@ -1,3 +1,8 @@
+Readme.rmd
+================
+Sergio Pedro R Oliveira
+2022-03-11
+
 # Objetivo
 
 Estudo dirigido de SQL, utilizando SQLite.
@@ -407,7 +412,7 @@ banco de dados.
         tabela.  
     -   Quais serão seus relacionamentos pai/filho?  
 
-    1.  Perguntas relacionadas aos dados:  
+    2.  Perguntas relacionadas aos dados:  
 
     -   Quantos dados serão fornecidos nessas tabelas?  
     -   Quem ou o que fornecerá os dados para as tabelas?  
@@ -415,7 +420,7 @@ banco de dados.
     -   Precisamos de processos que preencham automaticamente as
         tabelas?  
 
-    1.  Perguntas relacionadas a segurança:  
+    3.  Perguntas relacionadas a segurança:  
 
     -   Quem deve ter acesso a esse banco de dados?  
     -   Quem deve ter acesso a que tabelas? Acesso somente de leitura?
@@ -442,7 +447,7 @@ banco de dados.
 -   Não são permitidas duplicatas da chave primaria, ou seja, não pode
     ter dois registros iguais. Se isso acontecer ocorrerá um **ERRO**.  
 
-1.  Chave Externa:
+2.  Chave Externa:
 
 -   Chave externa não é o mesmo que chave primaria, a chave primaria
     existe na tabela-pai, a chave externa existe na tabela-filha.  
@@ -451,7 +456,7 @@ banco de dados.
 -   A chave externa não exige exclusividade, relacinamento “*um para
     muitos*”.  
 
-1.  Chave Primaria vs Chave Externa:
+3.  Chave Primaria vs Chave Externa:
 
 -   A chave externa e a chave primaria não precisam compartilhar o mesmo
     nome.  
@@ -551,6 +556,8 @@ Criação de tabelas.
 As principais ações do gerenciamento de dados são inserir, excluir e
 atualizar registros.  
 
+### **INSERT**
+
 -   **INSERT**  
     -   O comando serve para inserir registros no banco de dados.  
     -   Campos não preenchidos no registro, recebem valor **NULL**, ou
@@ -562,7 +569,7 @@ atualizar registros.
         **INSERT INTO** *nome_da_tabela* (*coluna1_do_registro*,
         *coluna2_do_registro*)  
         **VALUES** (‘*dado_1*’,‘*dado_2*’);  
--   Multiplas inserções  
+-   Multiplos **INSERT** simultâneos  
     -   É possivel inserir diversos registros de uma só vez.  
     -   Processo muito útil para inserções automatizada atraves de
         linguagens de programação, como:  
@@ -578,10 +585,57 @@ atualizar registros.
         (‘*dado_3*’,‘*dado_4*’),  
         …,  
         (‘*dado_n*’,‘*dado_n+1*’);  
+-   Chaves externas  
+    -   Se for inserido um registro em que a *chave externa* esteja
+        errada, registro orfão, o registro não será aceito.  
+
+### **DELETE**
+
+-   **DELETE**  
+    -   Deleta todos os registros de uma determinada tabela.  
+    -   Sintaxe:  
+        **DELETE FROM** *tabela*;  
+-   **DELETE WHERE**  
+    -   Pode ser usado em conjunto com a instrução WHERE para deletar
+        apenas determinados registros.  
+    -   Sintaxe:  
+        **DELETE** **FROM** *tabela*  
+        **WHERE** (*instrução*);  
+
+Obs.: No **MySQL** a melhor forma de DELETAR todos os registro s de uma
+tabela é pela instrução **TRUNCATE TABLE**.  
+Ex. Sintaxe:  
+**TRUNCATE TABLE** *nome_tabela*;  
+
+### **UPDATE**
+
+-   **UPDATE**
+    -   Modifica registros existentes.  
+    -   Pode moficicar diversos registros de uma vez por meio de uma
+        função.  
+    -   Sintaxe:  
+        **UPDATE** *tabela* **SET** *coluna* **=** *função*(*coluna*);  
+-   **UPDATE** varias colunas diferentes  
+    -   Pode modificar diversos registros de colunas diferentes de uma
+        só vez.  
+    -   Sintaxe:  
+        **UPDATE** *tabela* **SET**  
+        *coluna1* **=** *função*(*coluna1*),  
+        *coluna2* **=** *função*(*coluna2*);  
+-   **UPDATE WHERE**  
+    -   Pode ser usado em conjunto com a instrução **WHERE** para
+        modificar apenas determinados registros.  
+    -   Sintaxe:  
+        **UPDATE** *tabela* **SET** *coluna* **=** *valor*  
+        **WHERE** *tabela* **IN** (*lista_dos_registros*);  
+
+### **DROP TABLE**
+
+-   Deleta determinada tabela especificada.  
+-   Sintaxe:  
+    **DROP TABLE** *nome_da_tabela*;  
 
 # Andamento dos Estudos
-
-Estudando - Gerenciando dados.  
 
 ## Assunto em andamento:
 
