@@ -1,8 +1,3 @@
-Readme.rmd
-================
-Sergio Pedro R Oliveira
-2022-03-11
-
 # Objetivo
 
 Estudo dirigido de SQL, utilizando SQLite.
@@ -412,7 +407,7 @@ banco de dados.
         tabela.  
     -   Quais serão seus relacionamentos pai/filho?  
 
-    2.  Perguntas relacionadas aos dados:  
+    1.  Perguntas relacionadas aos dados:  
 
     -   Quantos dados serão fornecidos nessas tabelas?  
     -   Quem ou o que fornecerá os dados para as tabelas?  
@@ -420,7 +415,7 @@ banco de dados.
     -   Precisamos de processos que preencham automaticamente as
         tabelas?  
 
-    3.  Perguntas relacionadas a segurança:  
+    1.  Perguntas relacionadas a segurança:  
 
     -   Quem deve ter acesso a esse banco de dados?  
     -   Quem deve ter acesso a que tabelas? Acesso somente de leitura?
@@ -447,7 +442,7 @@ banco de dados.
 -   Não são permitidas duplicatas da chave primaria, ou seja, não pode
     ter dois registros iguais. Se isso acontecer ocorrerá um **ERRO**.  
 
-2.  Chave Externa:
+1.  Chave Externa:
 
 -   Chave externa não é o mesmo que chave primaria, a chave primaria
     existe na tabela-pai, a chave externa existe na tabela-filha.  
@@ -456,7 +451,7 @@ banco de dados.
 -   A chave externa não exige exclusividade, relacinamento “*um para
     muitos*”.  
 
-3.  Chave Primaria vs Chave Externa:
+1.  Chave Primaria vs Chave Externa:
 
 -   A chave externa e a chave primaria não precisam compartilhar o mesmo
     nome.  
@@ -637,10 +632,4 @@ Ex. Sintaxe:
 
 # Andamento dos Estudos
 
-## Assunto em andamento:
-
-## Em andamento:
-
-## Vazios:
-
-## Finalizando detalhes:
+Funções de ‘data e hora’ e ‘topicos suplementares’.  
