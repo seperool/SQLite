@@ -1,3 +1,8 @@
+Readme.rmd
+================
+Sergio Pedro R Oliveira
+2022-03-13
+
 # Objetivo
 
 Estudo dirigido de SQL, utilizando SQLite.
@@ -407,7 +412,7 @@ banco de dados.
         tabela.  
     -   Quais serão seus relacionamentos pai/filho?  
 
-    1.  Perguntas relacionadas aos dados:  
+    2.  Perguntas relacionadas aos dados:  
 
     -   Quantos dados serão fornecidos nessas tabelas?  
     -   Quem ou o que fornecerá os dados para as tabelas?  
@@ -415,7 +420,7 @@ banco de dados.
     -   Precisamos de processos que preencham automaticamente as
         tabelas?  
 
-    1.  Perguntas relacionadas a segurança:  
+    3.  Perguntas relacionadas a segurança:  
 
     -   Quem deve ter acesso a esse banco de dados?  
     -   Quem deve ter acesso a que tabelas? Acesso somente de leitura?
@@ -442,7 +447,7 @@ banco de dados.
 -   Não são permitidas duplicatas da chave primaria, ou seja, não pode
     ter dois registros iguais. Se isso acontecer ocorrerá um **ERRO**.  
 
-1.  Chave Externa:
+2.  Chave Externa:
 
 -   Chave externa não é o mesmo que chave primaria, a chave primaria
     existe na tabela-pai, a chave externa existe na tabela-filha.  
@@ -451,7 +456,7 @@ banco de dados.
 -   A chave externa não exige exclusividade, relacinamento “*um para
     muitos*”.  
 
-1.  Chave Primaria vs Chave Externa:
+3.  Chave Primaria vs Chave Externa:
 
 -   A chave externa e a chave primaria não precisam compartilhar o mesmo
     nome.  
@@ -630,6 +635,51 @@ Ex. Sintaxe:
 -   Sintaxe:  
     **DROP TABLE** *nome_da_tabela*;  
 
+## Capitulo 11 - Tópicos especiais
+
+### Funções de data e horario
+
+1.  **DATE**  
+
+-   Função **DATE**, serve para manipular datas no SQL.  
+-   O formato para trabalhar com data é **‘AAAA-MM-DD’** (*ano*
+    **traço** *mês* **traço** *dia*, **entre aspas**).  
+-   A função **DATE** aceita como outros argumentos, somar ou subtrair
+    anos, mês e dias.  
+-   Sintaxe:  
+    **DATE**(‘*aaaa-mm-dd*’,‘*+1 day*’)  
+-   Outro argumento que a função **DATE** aceita é o uso do ‘*now*’,
+    para pegar a data no sistema.  
+    -   Sintaxe:  
+        **DATE**(‘*now*’)  
+
+2.  **TIME**  
+
+-   Função **TIME**, serve para manipular horarios no SQL.  
+-   O formato para trabalhar com data é **‘HH:MM:SS’** (*horas* **dois
+    pontos** *minutos* **dois pontos** *segundos*, **entre aspas**).  
+-   A função **TIME** aceita como outros argumentos, somar ou subtrair
+    horas, minutos, segundos.  
+-   Sintaxe:  
+    **TIME**(‘*hh:mm:ss*’,‘*+1 minute*’)  
+-   Outro argumento que a função **TIME** aceita é o uso do ‘*now*’,
+    para pegar o horario no sistema.  
+    -   Sintaxe:  
+        **TIME**(‘*now*’)  
+
+3.  **DATETIME**  
+
+-   A função **DATETIME**, serve para manipulação de data e horario ao
+    mesmo tempo.  
+-   O formato para trabalhar com **DATETIME** é **‘AAAA-MM-DD
+    HH:MM:SS’** (*ano* **traço** *mês* **traço** *dia*, **espaço**,
+    *horas* **dois pontos** *minutos* **dois pontos** *segundos*,
+    **entre aspas**)  
+-   A função aceita como argumentos soma e subtração de data e
+    horario.  
+-   Sintaxe:  
+    **DATETIME** (‘*aaaa-mm-dd hh:mm:ss*’,‘**+1 day**’, ‘**-3 hour**’)  
+
 # Andamento dos Estudos
 
-Funções de ‘data e hora’ e ‘topicos suplementares’.  
+Tópicos especiais - data e hora.  
