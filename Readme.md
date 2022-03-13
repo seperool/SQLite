@@ -680,6 +680,28 @@ Ex. Sintaxe:
 -   Sintaxe:  
     **DATETIME** (‘*aaaa-mm-dd hh:mm:ss*’,‘**+1 day**’, ‘**-3 hour**’)  
 
+### Transações
+
+-   É uma instrução que só executa as instruções dentro dela, no caso
+    (**INSERT**, **UPDATE**, **DELETE**), apenas se todas as instruções
+    sejam concluidas com sucesso.  
+-   Caso alguma instrução dentro dela dê ERRO, tudo é desfeito.  
+-   Muito util para fazer operações de transação financeira entre
+    contas.  
+    -   Exemplo de transação financeira, transferencia de dinheiro entre
+        contas:  
+        -   Subtrair dinheiro de uma conta.  
+        -   Somar dinheiro em outra conta.  
+-   Sintaxe:  
+    **BEGIN TRANSACTION**  
+    **UPDATE** *tabela* **SET** *coluna1_a\_modificar* **=**
+    *expressão1*  
+    **WHERE** *tabela* **IN** (*lista_dos_registros_a\_modificar*)  
+    **UPDATE** *tabela* **SET** *coluna2_a\_modificar* **=**
+    *expressão2*  
+    **WHERE** *tabela* **IN** (*lista_dos_registros_a\_modificar*)  
+    **END TRANSACTION**  
+
 # Andamento dos Estudos
 
 Tópicos especiais - data e hora.  
