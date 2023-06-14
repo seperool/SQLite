@@ -1,15 +1,11 @@
-Readme.rmd
-================
-Sergio Pedro R Oliveira
-2022-03-13
-
 # Objetivo
 
 Estudo dirigido de SQL, utilizando SQLite.
 
 # Livro de referência
 
-Introdução a linguagem SQL - abordagem pratica para iniciantes
+Introdução a linguagem SQL - abordagem pratica para iniciantes. (Nield e
+Prates, 2016)  
 
 # Assuntos por capitulos e resumos
 
@@ -32,14 +28,17 @@ Introdução a linguagem SQL - abordagem pratica para iniciantes
 
 Obs.: na expressão o uso do ponto para representar o numero decimal.  
 
-### **Operadores matematicos**:
+### **Operadores matemáticos**:
 
-    ##   Operador        Descrição
-    ## 1        +             soma
-    ## 2        -        subtração
-    ## 3        *    multiplicação
-    ## 4        /          divisão
-    ## 5        % resto da divisão
+| Operador |    Descrição     |
+|:--------:|:----------------:|
+|    \+    |       soma       |
+|    \-    |    subtração     |
+|    \*    |  multiplicação   |
+|    /     |     divisão      |
+|    %     | resto da divisão |
+
+Operadores matemáticos.
 
 ### **Concatenação de textos**: 
 
@@ -77,13 +76,16 @@ Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
     -   *AND*  
         Criterios bem definidos  
 
-tabela verdade:
+tabela verdade:  
 
-    ##   p NOT_p q NOT_q p_AND_q p_OR_q
-    ## 1 V     F V     F       V      V
-    ## 2 V     F F     V       F      V
-    ## 3 F     V V     F       F      V
-    ## 4 F     V F     V       F      F
+|  P  | NOT P |  Q  | NOT Q | P AND Q | P OR Q |
+|:---:|:-----:|:---:|:-----:|:-------:|:------:|
+|  V  |   F   |  V  |   F   |    V    |   V    |
+|  V  |   F   |  F  |   V   |    F    |   V    |
+|  F  |   V   |  V  |   F   |    F    |   V    |
+|  F  |   V   |  F  |   V   |    F    |   F    |
+
+Tabela verdade.
 
 -   Uso de **listas**:  
     -   *IN*  
@@ -92,35 +94,20 @@ tabela verdade:
     -   *NOT IN*  
         Todos os dados, exceto os fornecidos pela lista.  
 
-<!-- -->
+| Operadores Lógicos |                               Descrição                               |      Exemplo       |
+|:------------:|:-------------------------------------------:|:------------:|
+|        AND         |       Verifica se todas as expressões booleanas são verdadeiras       |      x AND y       |
+|         OR         |          Verifica se alguma expressão booleana é verdadeira           |       x OR y       |
+|      BETWEEN       | Verifica se um valor se encaixa inclusivamente dentro de um intervalo | a BETWEEN x AND y  |
+|         IN         |      Verifica se um valor existe dentro de uma lista de valores       |   a IN (x,y,w,z)   |
+|        NOT         |           Nega e inverte o valor em uma expressão booleana            | a NOT IN (x,y,w,z) |
+|      IS NULL       |                      Verifica se um valor é nulo                      |     a IS NULL      |
+|    IS NOT NULL     |                    Verifica se um valor não é nulo                    |   a IS NOT NULL    |
 
-    ##      Operador
-    ## 1         AND
-    ## 2          OR
-    ## 3     BETWEEN
-    ## 4          IN
-    ## 5         NOT
-    ## 6     IS NULL
-    ## 7 IS NOT NULL
-    ##                                                       Descricao_op_logc
-    ## 1             Verifica se todas as expressões booleanas são verdadeiras
-    ## 2                    Verifica se alguma expressão booleana é verdadeira
-    ## 3 Verifica se um valor se encaixa inclusivamente dentro de um intervalo
-    ## 4            Verifica se um valor existe dentro de uma lista de valores
-    ## 5                      Nega e inverte o valor em uma expressão booleana
-    ## 6                                           Verifica se um valor é nulo
-    ## 7                                       Verifica se um valor não é nulo
-    ##              Exemplo
-    ## 1            x AND y
-    ## 2             x OR y
-    ## 3  a BETWEEN x AND y
-    ## 4     a IN (x,y,w,z)
-    ## 5 a NOT IN (x,y,w,z)
-    ## 6          a IS NULL
-    ## 7      a IS NOT NULL
+Operadores lógicos.
 
 -   uso de *booleanos* no filtro, em conjunto com NOT para transformar
-    um true em false (1 -> 0).  
+    um true em false (1 -\> 0).  
 
     -   **true** = 1.  
 
@@ -159,24 +146,17 @@ agrupamento.
 -   Normalmente é usado com conjunto com funções tipicas de sumarização
     (resumo), como:  
 
-<!-- -->
+|     Função      |                               Descrição                               |
+|:-------------:|:-------------------------------------------------------:|
+|     avg(X)      | Calcula a media de todos os valores da coluna X (Omite valores nulos) |
+|    count(X)     |            Contao o numero de valore não nulos da coluna X            |
+|    count(\*)    |                       Conta o numero registros                        |
+|     max(X)      |       Encontra o valor maximo da coluna X (Omite valores nulos)       |
+|     min(X)      |       Encontra o valor minimo da coluna X (Omite valores nulos)       |
+|     sum(X)      |     Calcula a soma dos valores da coluna X (Omite valores nulos)      |
+| group_concat(X) |            Concatena os valores não nulos da coluna X.\*\*            |
 
-    ##            Funcao
-    ## 1          avg(X)
-    ## 2        count(X)
-    ## 3        count(*)
-    ## 4          max(X)
-    ## 5          min(X)
-    ## 6          sum(X)
-    ## 7 group_concat(X)
-    ##                                           Descricao_func_tipica_groupby
-    ## 1 Calcula a media de todos os valores da coluna X (Omite valores nulos)
-    ## 2                       Contao o numero de valore não nulos da coluna X
-    ## 3                                              Conta o numero registros
-    ## 4             Encontra o valor maximo da coluna X (Omite valores nulos)
-    ## 5             Encontra o valor minimo da coluna X (Omite valores nulos)
-    ## 6          Calcula a soma dos valores da coluna X (Omite valores nulos)
-    ## 7                         Concatena os valores não nulos da coluna X.**
+Funções tipicas do GROUP BY.
 
 **Obs.: Você também pode fornecer um segundo argumento que especifica um
 separador, como a virgula.  
@@ -211,7 +191,7 @@ BY\*\*:
     BY**.  
 -   Sintaxe no Oracle é ligeiramente diferente, é preciso especificar a
     função de agregação ao usar o **HAVING**.  
-    ex.: HAVING **SUM**(precipitation) > 30  
+    ex.: HAVING **SUM**(precipitation) \> 30  
 
 ### DISTINCT
 
@@ -412,7 +392,7 @@ banco de dados.
         tabela.  
     -   Quais serão seus relacionamentos pai/filho?  
 
-    2.  Perguntas relacionadas aos dados:  
+    1.  Perguntas relacionadas aos dados:  
 
     -   Quantos dados serão fornecidos nessas tabelas?  
     -   Quem ou o que fornecerá os dados para as tabelas?  
@@ -420,7 +400,7 @@ banco de dados.
     -   Precisamos de processos que preencham automaticamente as
         tabelas?  
 
-    3.  Perguntas relacionadas a segurança:  
+    1.  Perguntas relacionadas a segurança:  
 
     -   Quem deve ter acesso a esse banco de dados?  
     -   Quem deve ter acesso a que tabelas? Acesso somente de leitura?
@@ -447,7 +427,7 @@ banco de dados.
 -   Não são permitidas duplicatas da chave primaria, ou seja, não pode
     ter dois registros iguais. Se isso acontecer ocorrerá um **ERRO**.  
 
-2.  Chave Externa:
+1.  Chave Externa:
 
 -   Chave externa não é o mesmo que chave primaria, a chave primaria
     existe na tabela-pai, a chave externa existe na tabela-filha.  
@@ -456,7 +436,7 @@ banco de dados.
 -   A chave externa não exige exclusividade, relacinamento “*um para
     muitos*”.  
 
-3.  Chave Primaria vs Chave Externa:
+1.  Chave Primaria vs Chave Externa:
 
 -   A chave externa e a chave primaria não precisam compartilhar o mesmo
     nome.  
@@ -653,7 +633,7 @@ Ex. Sintaxe:
     -   Sintaxe:  
         **DATE**(‘*now*’)  
 
-2.  **TIME**  
+1.  **TIME**  
 
 -   Função **TIME**, serve para manipular horarios no SQL.  
 -   O formato para trabalhar com data é **‘HH:MM:SS’** (*horas* **dois
@@ -667,7 +647,7 @@ Ex. Sintaxe:
     -   Sintaxe:  
         **TIME**(‘*now*’)  
 
-3.  **DATETIME**  
+1.  **DATETIME**  
 
 -   A função **DATETIME**, serve para manipulação de data e horario ao
     mesmo tempo.  
@@ -694,14 +674,20 @@ Ex. Sintaxe:
         -   Somar dinheiro em outra conta.  
 -   Sintaxe:  
     **BEGIN TRANSACTION**  
-    **UPDATE** *tabela* **SET** *coluna1_a\_modificar* **=**
+    **UPDATE** *tabela* **SET** *coluna1_a_modificar* **=**
     *expressão1*  
-    **WHERE** *tabela* **IN** (*lista_dos_registros_a\_modificar*)  
-    **UPDATE** *tabela* **SET** *coluna2_a\_modificar* **=**
+    **WHERE** *tabela* **IN** (*lista_dos_registros_a_modificar*)  
+    **UPDATE** *tabela* **SET** *coluna2_a_modificar* **=**
     *expressão2*  
-    **WHERE** *tabela* **IN** (*lista_dos_registros_a\_modificar*)  
+    **WHERE** *tabela* **IN** (*lista_dos_registros_a_modificar*)  
     **END TRANSACTION**  
 
 # Andamento dos Estudos
 
-Tópicos especiais - data e hora.  
+Concluído.  
+
+# REFERÊNCIA
+
+NIELD, T.; PRATES, R. **[Introdução à Linguagem SQL: Abordagem prática
+para iniciantes](https://books.google.com.br/books?id=5HQdDAAAQBAJ)**.
+\[s.l.\] Novatec Editora, 2016.
