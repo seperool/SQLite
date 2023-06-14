@@ -285,7 +285,7 @@ um separador, como a virgula.
     associação entre as tabelas recebe valor `NULL`.  
     - Sintaxe:  
     `SELECT (colunas consultadas das duas tabelas), tabela-pai.coluna_chave     FROM tabela-pai(A ESQUERDA) LEFT JOIN tabela-filha(A DIREITA)     ON tabela-pai.coluna_chave = tabela-filha.coluna_chave;`
-2.  **LEFT JOIN** + **WHERE NULL**  
+2.  `LEFT JOIN` + `WHERE NULL`  
     - Pode ser usado em conjunto com filtro `WHERE` procurando valores
     `NULL` para achar registros sem relação entre tabelas.  
     ex.: pedidos sem cliente ou clientes sem pedidos.  
@@ -424,22 +424,23 @@ chaves primarias/externas estão sendo usadas de maneira eficientes.
 
 -   Extensão de banco de dados “.db”.
 
-## Criando TABLE
+## Criando **TABLE**
 
 Criação de tabelas.  
 
 -   Ao criar tabelas é preciso criar as colunas e definir o tipo, as
     restrições e regras elas devem seguir.  
-
 -   Sintaxe:  
-    **CREATE** **TABLE** *nome_da_tabela*(  
-    *nome_da_coluna1* tipo regra restrição,  
-    *nome_da_coluna2* tipo regra restrição,  
-    …  
-    );  
+
+<!-- -->
+
+    CREATE TABLE nome_da_tabela(
+    nome_da_coluna1   tipo    regra   restrição,
+    nome_da_coluna2   tipo    regra   restrição,
+    ...
+    );
 
 -   tipos:  
-
     -   **INTEGER**  
         Valores inteiros.  
     -   **REAL**  
@@ -450,53 +451,52 @@ Criação de tabelas.
         Aceita valores booleanos, 1 é verdadeiro e 0 é falso.  
     -   **TIME**  
         Tempo.  
-
 -   regras:  
-
-    -   **PRIMARY KEY**  
+    -   `PRIMARY KEY`  
         -   *Chave primaria*. Determina coluna(s) identificadoras da
             tabela.  
         -   Também usado para forjar relações entre tabelas
             (identificador de tabela-pai).  
-    -   **FOREIGN KEY**  
+    -   `FOREIGN KEY`  
         -   *Chave externa*. Determina as relações entre tabelas-pai e
             filha.  
         -   Sintaxe:  
-            **REFERENCES** *nome_da_tabela-pai*
-            (*coluna_chave_da_tabela-pai*)  
-    -   **NOT NULL**
-        -   Não aceitar valor **NULL**.  
-    -   **DEFAULT**
+            `REFERENCES nome_da_tabela-pai (coluna_chave_da_tabela-pai)`  
+    -   `NOT NULL`
+        -   Não aceitar valor `NULL`.  
+    -   `DEFAULT`
         -   Determina um valor default para o registro, muito util para
-            tipo BOOLEANO.  
+            tipo **BOOLEANO**.  
         -   Sintaxe:  
-            **DEFAULT** (0)  
-
+            `DEFAULT (0)`  
 -   restrições:  
-
-    -   **AUTOINCREMENT**  
+    -   `AUTOINCREMENT`  
         Adiciona valores automaticamente no registro.  
 
-## Criando VIEWS
+## Criando **VIEWS**
 
 -   Quando salvamos uma consulta em um banco de dados, ela se chama
     *view*.  
+
 -   Podemos consultar uma *view* como se ela fosse uma tabela, ou seja,
     chamar a *view*, apelicar:  
-    -   **SELECT**
-    -   **WHERE**
-    -   **CASE**
-    -   …
+
+    -   `SELECT`  
+    -   `WHERE`  
+    -   `CASE`  
+    -   …  
+
 -   Sintaxe:  
-    **CREATE VIEW** *nome_da_view* **AS**  
-    **SELECT**  
-    *nome_da_tabela.coluna1*  
-    *nome_da_tabela.coluna2*  
-    …  
-    **FROM** *tabela1*  
-    **INNER JOIN** *tabela2*  
-    **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*  
-    …;  
+
+        CREATE VIEW nome_da_view AS
+        SELECT
+        nome_da_tabela.coluna1
+        nome_da_tabela.coluna2
+        ...
+        FROM tabela1
+        INNER JOIN tabela2
+        ON tabela1.coluna_chave1 = tabela2.coluna_chave1
+        ...;
 
 # Capitulo 10 - GERENCIANDO DADOS
 
@@ -505,18 +505,20 @@ atualizar registros.
 
 ## **INSERT**
 
--   **INSERT**  
+-   `INSERT`  
     -   O comando serve para inserir registros no banco de dados.  
-    -   Campos não preenchidos no registro, recebem valor **NULL**, ou
+    -   Campos não preenchidos no registro, recebem valor `NULL`, ou
         valores pré-determinados.  
-    -   Se um campo não for preenchido e tiver a restrição **NOT NULL**,
-        o **INSERT** falhara, pois não tem valor pré-definido e não pode
-        ser desconsiderado aquele registro.  
+    -   Se um campo não for preenchido e tiver a restrição `NOT NULL`, o
+        `INSERT` falhara, pois não tem valor pré-definido e não pode ser
+        desconsiderado aquele registro.  
     -   Sintaxe:  
-        **INSERT INTO** *nome_da_tabela* (*coluna1_do_registro*,
-        *coluna2_do_registro*)  
-        **VALUES** (‘*dado_1*’,‘*dado_2*’);  
--   Multiplos **INSERT** simultâneos  
+
+    <!-- -->
+
+        INSERT INTO nome_da_tabela (coluna1_do_registro, coluna2_do_registro)
+        VALUES ('dado_1','dado_2');
+-   Multiplos `INSERT` simultâneos  
     -   É possivel inserir diversos registros de uma só vez.  
     -   Processo muito útil para inserções automatizada atraves de
         linguagens de programação, como:  
@@ -525,113 +527,123 @@ atualizar registros.
         -   Java  
         -   …  
     -   Sintaxe:  
-        **INSERT INTO** *nome_da_tabela* (*coluna1_do_registro*,
-        *coluna2_do_registro*)  
-        **VALUES**  
-        (‘*dado_1*’,‘*dado_2*’),  
-        (‘*dado_3*’,‘*dado_4*’),  
-        …,  
-        (‘*dado_n*’,‘*dado_n+1*’);  
+
+    <!-- -->
+
+        INSERT INTO nome_da_tabela (coluna1_do_registro, coluna2_do_registro)
+        VALUES
+        ('dado_1','dado_2'),
+        ('dado_3','dado_4'),
+        ...,
+        ('dado_n','dado_n+1');
 -   Chaves externas  
     -   Se for inserido um registro em que a *chave externa* esteja
         errada, registro orfão, o registro não será aceito.  
 
 ## **DELETE**
 
--   **DELETE**  
+-   `DELETE`  
     -   Deleta todos os registros de uma determinada tabela.  
     -   Sintaxe:  
-        **DELETE FROM** *tabela*;  
--   **DELETE WHERE**  
+        `DELETE FROM tabela;`  
+-   `DELETE WHERE`  
     -   Pode ser usado em conjunto com a instrução WHERE para deletar
         apenas determinados registros.  
     -   Sintaxe:  
-        **DELETE** **FROM** *tabela*  
-        **WHERE** (*instrução*);  
 
-Obs.: No **MySQL** a melhor forma de DELETAR todos os registro s de uma
-tabela é pela instrução **TRUNCATE TABLE**.  
+    <!-- -->
+
+        DELETE FROM tabela
+        WHERE (instrução);
+
+Obs.: No **MySQL** a melhor forma de *deletar* todos os registros de uma
+tabela é pela instrução `TRUNCATE TABLE`.  
 Ex. Sintaxe:  
-**TRUNCATE TABLE** *nome_tabela*;  
+`TRUNCATE TABLE nome_tabela;`  
 
 ## **UPDATE**
 
--   **UPDATE**
+-   `UPDATE`  
     -   Modifica registros existentes.  
     -   Pode moficicar diversos registros de uma vez por meio de uma
         função.  
     -   Sintaxe:  
-        **UPDATE** *tabela* **SET** *coluna* **=** *função*(*coluna*);  
--   **UPDATE** varias colunas diferentes  
+        `UPDATE tabela SET coluna = função(coluna);`  
+-   `UPDATE` varias colunas diferentes  
     -   Pode modificar diversos registros de colunas diferentes de uma
         só vez.  
     -   Sintaxe:  
-        **UPDATE** *tabela* **SET**  
-        *coluna1* **=** *função*(*coluna1*),  
-        *coluna2* **=** *função*(*coluna2*);  
--   **UPDATE WHERE**  
-    -   Pode ser usado em conjunto com a instrução **WHERE** para
+
+    <!-- -->
+
+        UPDATE tabela SET
+        coluna1 = função(coluna1),
+        coluna2 = função(coluna2);
+-   `UPDATE WHERE`  
+    -   Pode ser usado em conjunto com a instrução `WHERE` para
         modificar apenas determinados registros.  
     -   Sintaxe:  
-        **UPDATE** *tabela* **SET** *coluna* **=** *valor*  
-        **WHERE** *tabela* **IN** (*lista_dos_registros*);  
+
+    <!-- -->
+
+        UPDATE tabela SET coluna = valor
+        WHERE tabela IN (lista_dos_registros);
 
 ## **DROP TABLE**
 
 -   Deleta determinada tabela especificada.  
 -   Sintaxe:  
-    **DROP TABLE** *nome_da_tabela*;  
+    `DROP TABLE nome_da_tabela;`  
 
 # CAPITULO 11 - TÓPICOS ESPECIAIS
 
 ## Funções de data e horario
 
-1.  **DATE**  
+1.  `DATE`  
 
--   Função **DATE**, serve para manipular datas no SQL.  
+-   Função `DATE`, serve para manipular datas no SQL.  
 -   O formato para trabalhar com data é **‘AAAA-MM-DD’** (*ano*
     **traço** *mês* **traço** *dia*, **entre aspas**).  
--   A função **DATE** aceita como outros argumentos, somar ou subtrair
+-   A função `DATE` aceita como outros argumentos, somar ou subtrair
     anos, mês e dias.  
 -   Sintaxe:  
-    **DATE**(‘*aaaa-mm-dd*’,‘*+1 day*’)  
--   Outro argumento que a função **DATE** aceita é o uso do ‘*now*’,
-    para pegar a data no sistema.  
+    `DATE('aaaa-mm-dd','+1 day')`  
+-   Outro argumento que a função `DATE` aceita é o uso do ‘*now*’, para
+    pegar a data no sistema.  
     -   Sintaxe:  
-        **DATE**(‘*now*’)  
+        `DATE('now')`  
 
-1.  **TIME**  
+1.  `TIME`  
 
--   Função **TIME**, serve para manipular horarios no SQL.  
+-   Função `TIME`, serve para manipular horarios no SQL.  
 -   O formato para trabalhar com data é **‘HH:MM:SS’** (*horas* **dois
     pontos** *minutos* **dois pontos** *segundos*, **entre aspas**).  
--   A função **TIME** aceita como outros argumentos, somar ou subtrair
+-   A função `TIME` aceita como outros argumentos, somar ou subtrair
     horas, minutos, segundos.  
 -   Sintaxe:  
-    **TIME**(‘*hh:mm:ss*’,‘*+1 minute*’)  
--   Outro argumento que a função **TIME** aceita é o uso do ‘*now*’,
-    para pegar o horario no sistema.  
+    `TIME('hh:mm:ss','+1 minute')`  
+-   Outro argumento que a função `TIME` aceita é o uso do ‘*now*’, para
+    pegar o horario no sistema.  
     -   Sintaxe:  
-        **TIME**(‘*now*’)  
+        `TIME('now')`  
 
-1.  **DATETIME**  
+1.  `DATETIME`  
 
--   A função **DATETIME**, serve para manipulação de data e horario ao
+-   A função `DATETIME`, serve para manipulação de data e horario ao
     mesmo tempo.  
--   O formato para trabalhar com **DATETIME** é **‘AAAA-MM-DD
-    HH:MM:SS’** (*ano* **traço** *mês* **traço** *dia*, **espaço**,
-    *horas* **dois pontos** *minutos* **dois pontos** *segundos*,
-    **entre aspas**)  
+-   O formato para trabalhar com `DATETIME` é **‘AAAA-MM-DD HH:MM:SS’**
+    (*ano* **traço** *mês* **traço** *dia*, **espaço**, *horas* **dois
+    pontos** *minutos* **dois pontos** *segundos*, **entre aspas**)  
 -   A função aceita como argumentos soma e subtração de data e
     horario.  
 -   Sintaxe:  
-    **DATETIME** (‘*aaaa-mm-dd hh:mm:ss*’,‘**+1 day**’, ‘**-3 hour**’)  
+    `DATETIME ('aaaa-mm-dd hh:mm:ss','+1 day', '-3 hour')`  
 
 ## Transações
 
 -   É uma instrução que só executa as instruções dentro dela, no caso
-    (**INSERT**, **UPDATE**, **DELETE**), apenas se todas as instruções
-    sejam concluidas com sucesso.  
+    (`INSERT`, `UPDATE`, `DELETE`), apenas se todas as instruções sejam
+    concluidas com sucesso.  
 -   Caso alguma instrução dentro dela dê ERRO, tudo é desfeito.  
 -   Muito util para fazer operações de transação financeira entre
     contas.  
@@ -640,14 +652,15 @@ Ex. Sintaxe:
         -   Subtrair dinheiro de uma conta.  
         -   Somar dinheiro em outra conta.  
 -   Sintaxe:  
-    **BEGIN TRANSACTION**  
-    **UPDATE** *tabela* **SET** *coluna1_a_modificar* **=**
-    *expressão1*  
-    **WHERE** *tabela* **IN** (*lista_dos_registros_a_modificar*)  
-    **UPDATE** *tabela* **SET** *coluna2_a_modificar* **=**
-    *expressão2*  
-    **WHERE** *tabela* **IN** (*lista_dos_registros_a_modificar*)  
-    **END TRANSACTION**  
+
+<!-- -->
+
+    BEGIN TRANSACTION
+    UPDATE tabela SET coluna1_a_modificar = expressão1
+    WHERE tabela IN (lista_dos_registros_a_modificar)
+    UPDATE tabela SET coluna2_a_modificar = expressão2
+    WHERE tabela IN (lista_dos_registros_a_modificar)
+    END TRANSACTION
 
 # ANDAMENTO DOS ESTUDOS
 
