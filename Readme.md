@@ -7,40 +7,38 @@ Estudo dirigido de SQL, utilizando SQLite.
 Introdução a linguagem SQL - abordagem pratica para iniciantes. (Nield e
 Prates, 2016)  
 
-# Assuntos por capitulos e resumos
+# Capítulo 4 - **SELECT**
 
-## Capítulo 4 - **SELECT**
-
-### **SELECT**: 
+## **SELECT**
 
 -   Extrai dados de uma tabela e exibe os resultados.  
 
 -   Uso do (\*) para especificar todas as colunas.  
 
--   Uso do **AS** para criar nova coluna, tambem serve para mudar nome
-    de coluna, na consulta.  
+-   Uso do `AS` para criar nova coluna, tambem serve para mudar nome de
+    coluna, na consulta.  
 
--   Uso da função *round()* para arredondamentos.  
+-   Uso da função `round()` para arredondamentos.  
 
--   Uso da função *coalesce()* para alterar o valor NULL de determinada
-    coluna para outro valor estabelecido. Usado em conjunto com o **AS**
+-   Uso da função `coalesce()` para alterar o valor NULL de determinada
+    coluna para outro valor estabelecido. Usado em conjunto com o `AS`
     para trocar o nome da coluna, na consulta.  
 
-Obs.: na expressão o uso do ponto para representar o numero decimal.  
+Obs.: na expressão o uso do ponto para representar o número decimal.  
 
-### **Operadores matemáticos**:
+## **Operadores matemáticos**
 
 | Operador |    Descrição     |
 |:--------:|:----------------:|
-|    \+    |       soma       |
-|    \-    |    subtração     |
-|    \*    |  multiplicação   |
-|    /     |     divisão      |
-|    %     | resto da divisão |
+|    \+    |       Soma       |
+|    \-    |    Subtração     |
+|    \*    |  Multiplicação   |
+|    /     |     Divisão      |
+|    %     | Resto da divisão |
 
 Operadores matemáticos.
 
-### **Concatenação de textos**: 
+## **Concatenação de textos**
 
 -   Mescla dois ou mais dados.  
 
@@ -49,9 +47,9 @@ Operadores matemáticos.
 
 -   Após a mesclagem de dados o retorno é no dado tipo texto.  
 
-Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
+Obs.: no MySQL a função que faz concatenação é `CONCAT()`.
 
-## Capítulo 5 - **WHERE**
+# CAPÍTULO 5 - **WHERE**
 
 -   **Filtro** de dados(registros) para consulta.  
 
@@ -59,21 +57,21 @@ Obs.: no MySQL a função que faz concatenação é **CONCAT()**.
 
     -   Consultas atraves de criterios em formato **texto**.  
 
--   Uso da função *length* em conjunto com **WHERE**, função para
-    determinar o numero de caracteres.  
+-   Uso da função `length` em conjunto com `WHERE`, função para
+    determinar o número de caracteres.  
 
--   Uso do **BETWEEN** para filtragem inclusiva de dados, buscar dados
+-   Uso do `BETWEEN` para filtragem inclusiva de dados, buscar dados
     entre valores.  
 
--   Uso da expressão **LIKE**, para utilização de caracteres curingas na
+-   Uso da expressão `LIKE`, para utilização de caracteres curingas na
     utilização de filtros.  
 
 -   Uso de operadores logicos para auxilar na filtragem de dados:  
 
-    -   *OR*  
+    -   `OR`  
         Uso de mais de um criterio para filtragem.  
 
-    -   *AND*  
+    -   `AND`  
         Criterios bem definidos  
 
 tabela verdade:  
@@ -88,10 +86,10 @@ tabela verdade:
 Tabela verdade.
 
 -   Uso de **listas**:  
-    -   *IN*  
+    -   `IN`  
         fornece uma lista validade valores como criterio de filtragem.  
 
-    -   *NOT IN*  
+    -   `NOT IN`  
         Todos os dados, exceto os fornecidos pela lista.  
 
 | Operadores Lógicos |                               Descrição                               |      Exemplo       |
@@ -109,128 +107,129 @@ Operadores lógicos.
 -   uso de *booleanos* no filtro, em conjunto com NOT para transformar
     um true em false (1 -\> 0).  
 
-    -   **true** = 1.  
+    -   `true = 1`.  
 
-    -   **false** = 0.  
+    -   `false = 0`.  
 
-obs.: SQLite só aceita 1 e 0. MySQL aceita true e false.  
+obs.: **SQLite** só aceita 1 e 0. **MySQL** aceita `true` e `false`.  
 
--   Tratamento de NULL, valor nulo.
+-   Tratamento de `NULL`, valor nulo.
 
-    -   funções para trabalhar com NULL:
+    -   funções para trabalhar com `NULL`:
 
-        -   **IS NULL**  
-            Filtra valores NULL.  
+        -   `IS NULL`  
+            Filtra valores `NULL`.  
 
-        -   **IS NOT NULL**  
-            Filtra valores não NULL.  
+        -   `IS NOT NULL`  
+            Filtra valores não `NULL`.  
 
-        -   **IS NULL OR**  
-            Adiciona NULL a filtragem, junto de outros criterios.  
+        -   `IS NULL OR`  
+            Adiciona `NULL` a filtragem, junto de outros criterios.  
 
-        -   *coalesce*  
-            Transforma valores NULL em outra coisa.  
+        -   `coalesce`  
+            Transforma valores `NULL` em outra coisa.  
 
-Obs.: em situação normal, o valor NULL é ignorado pelos filtros
-matematicos, se não especificado.  
+Obs.: em situação normal, o valor `NULL` é ignorado pelos filtros
+matemáticos, se não especificado.  
 
-## Capítulo 6 - **GROUP BY** e **ORDER BY**
+# CAPÍTULO 6 - **GROUP BY** E **ORDER BY**
 
 Agragação de dados, também conhecido como totalização, resumo ou
 agrupamento.  
 
-### GROUP BY
+## **GROUP BY**
 
 -   Agrupamento de registros.  
--   É comum ser usado em conjunto com **WHERE** para selecionar dados.  
+-   É comum ser usado em conjunto com `WHERE` para selecionar dados.  
 -   Normalmente é usado com conjunto com funções tipicas de sumarização
     (resumo), como:  
 
 |     Função      |                               Descrição                               |
 |:-------------:|:-------------------------------------------------------:|
 |     avg(X)      | Calcula a media de todos os valores da coluna X (Omite valores nulos) |
-|    count(X)     |            Contao o numero de valore não nulos da coluna X            |
-|    count(\*)    |                       Conta o numero registros                        |
-|     max(X)      |       Encontra o valor maximo da coluna X (Omite valores nulos)       |
-|     min(X)      |       Encontra o valor minimo da coluna X (Omite valores nulos)       |
+|    count(X)     |            Conta o número de valore não nulos da coluna X             |
+|    count(\*)    |                       Conta o número registros                        |
+|     max(X)      |       Encontra o valor máximo da coluna X (Omite valores nulos)       |
+|     min(X)      |       Encontra o valor mínimo da coluna X (Omite valores nulos)       |
 |     sum(X)      |     Calcula a soma dos valores da coluna X (Omite valores nulos)      |
 | group_concat(X) |            Concatena os valores não nulos da coluna X.\*\*            |
 
 Funções tipicas do GROUP BY.
 
-**Obs.: Você também pode fornecer um segundo argumento que especifica um
-separador, como a virgula.  
-- Existem duas formas possiveis de escrever os argumentos de **GROUP
-BY\*\*:  
+\*\*Obs.: Você também pode fornecer um segundo argumento que especifica
+um separador, como a virgula.  
+- Existem duas formas possiveis de escrever os argumentos de
+`GROUP BY`:  
 
-1.  Escrevendo o nome das colunas especificadas em **SELECT**.  
+1.  Escrevendo o nome das colunas especificadas em `SELECT`.  
 
-2.  Dando o numero da ordem das colunas que aparecem especificadas em
-    **SELECT**.  
-    Essa segunda forma não funciona no Oracle e no SQL Server.  
+2.  Dando o número da ordem das colunas que aparecem especificadas em
+    `SELECT`.  
+    Essa segunda forma não funciona no **Oracle** e no **SQL Server**.  
 
-### ORDER BY
+## **ORDER BY**
 
 -   Ordenando registros.  
 
 -   Por padrão a instrução ORDER BY organiza por ordem crescente os
     registros.  
 
--   Operadores **ORDER BY**:
+-   Operadores `ORDER BY`:  
 
-    1.  **ASC**  
+    1.  `ASC`  
         Organiza os registros. em ordem crescente  
 
-    2.  **DESC**  
+    2.  `DESC`  
         Organiza os registros em ordem decrescente.  
 
-### HAVING
+## **HAVING**
 
 -   Filtra registros de acordo com um valor agregado.  
--   Substitui o **WHERE** para filtrar valores agregados por **GROUP
-    BY**.  
--   Sintaxe no Oracle é ligeiramente diferente, é preciso especificar a
-    função de agregação ao usar o **HAVING**.  
-    ex.: HAVING **SUM**(precipitation) \> 30  
+-   Substitui o `WHERE` para filtrar valores agregados por `GROUP BY`.  
+-   Sintaxe no **Oracle** é ligeiramente diferente, é preciso
+    especificar a função de agregação ao usar o `HAVING`.  
+    ex.: `HAVING SUM(precipitation) > 30`  
 
-### DISTINCT
+## **DISTINCT**
 
 -   Instrução para obter registros distintos, sem duplicatas, sem
     valores repetidos.  
 
-## Capítulo 7 - **CASE**
+# CAPÍTULO 7 - **CASE**
 
-### CASE
+## **CASE**
 
 -   Esse comando nos permite substituir o valor de uma coluna por outro
     valor, de acordo com uma ou mais condições.  
--   Equivalente ao **IF**, **ELIF**, **ELSE** de outras linguagens.  
--   Sintaxe do **CASE**:  
-    **CASE**  
-    **WHEN** (*condição*) **THEN** (*valor1*)  
-    **ELSE** (*valor2*)  
-    **END** **AS** (*nome da nova coluna*)  
+-   Equivalente ao `IF`, `ELIF`, `ELSE` de outras linguagens.  
+-   Sintaxe do `CASE`:  
 
-### Truque **CASE** **ZERO**/**NULL**
+<!-- -->
+
+    CASE
+    WHEN (condição) THEN (valor1)
+    ELSE (valor2)
+    END AS (nome da nova coluna)
+
+## Truque **CASE** **ZERO**/**NULL**
 
 -   Onde é possivel colocar a instrução CASE dentro de uma função de
-    agregação, substituindo assim o uso do **WHERE**.  
+    agregação, substituindo assim o uso do `WHERE`.  
 
 -   Aplicando assim mais de um filtro distinto na mesma pesquisa.  
 
 -   Sintaxe:  
-    **SUM**(**CASE** **WHEN** (*condição*) **THEN** (*valor1*) **ELSE**
-    (*valor2*) **END**) **AS** (*nome da nova coluna*)  
+    `SUM(CASE WHEN (condição) THEN (valor1) ELSE (valor2) END) AS (nome da nova coluna)`  
 
--   É possivel dentro da *condição* fazer uso de operadores logicos:  
+-   É possivel dentro da *condição* fazer uso de operadores lógicos:  
 
-    -   **OR**  
-    -   **AND**  
-    -   **NOT**  
+    -   `OR`  
+    -   `AND`  
+    -   `NOT`  
 
-## Capítulo 8 - **JOIN**
+# CAPÍTULO 8 - **JOIN**
 
-### Banco de dados relacional
+## Banco de dados relacional
 
 -   Duas ou mais tabelas se relacionam (relacionais) determinado campo
     de uma tabela aponta para o campo de outra tabela.  
@@ -253,79 +252,65 @@ BY\*\*:
         **Diversos** registros da tabela-pai podem estar associados a
         **diversos** registros da tabela-filha.  
 
-### **INNER JOIN**
+## **INNER JOIN**
 
 -   Une duas tabelas, relacionadas, para efetuar consultas mais
     eficientes.  
-
 -   A mescla é feita apartir de algum campo comum, para que os registros
     se alinhem, colunas *chave*.  
-
 -   Sintaxe:  
-    **SELECT** (colunas consultadas das duas tabelas),
-    *tabela-pai.coluna_chave*  
-    **FROM** *tabela-pai* **INNER JOIN** *tabela-filha*  
-    **ON** *tabela-pai.coluna_chave* **=**
-    *tabela-filha.coluna_chave*;  
 
--   Obs.:
+<!-- -->
 
-    -   No **SELECT** é preciso selecionar a *coluna_chave*, tanto faz
-        se for da tabela-pai ou filha.  
-    -   É dentro do **FROM** que é executado o **JOIN INNER**.  
+    SELECT (colunas consultadas das duas tabelas), tabela-pai.coluna_chave
+    FROM tabela-pai INNER JOIN tabela-filha
+    ON tabela-pai.coluna_chave = tabela-filha.coluna_chave;
+
+-   Obs.:  
+    -   No `SELECT` é preciso selecionar a *coluna_chave*, tanto faz se
+        for da tabela-pai ou filha.  
+    -   É dentro do `FROM` que é executado o `JOIN INNER`.  
     -   Quanto a exibição dos resultados, só é exibido registros que
         existam nas duas tabelas.  
     -   Caso queiramos incluir consultas que mostrem todos os registros,
-        mesmo os que só existam em uma tabela, podemos usar **LEFT
-        JOIN**.  
+        mesmo os que só existam em uma tabela, podemos usar
+        `LEFT JOIN`.  
 
-### **LEFT JOIN**
+## **LEFT JOIN**
 
-1.  **LEFT JOIN**  
+1.  `LEFT JOIN`  
     - Mescla duas tabelas, uma há esquerda.  
     - Mantem todos os registros da tabela a esquerda.  
-    - Diferente do **INNER JOIN**, não omite registros. Registros sem
-    associação entre as tabelas recebe valor **NULL**.  
+    - Diferente do `INNER JOIN`, não omite registros. Registros sem
+    associação entre as tabelas recebe valor `NULL`.  
     - Sintaxe:  
-    **SELECT** (colunas consultadas das duas tabelas),
-    *tabela-pai.coluna_chave*  
-    **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A
-    DIREITA)*  
-    **ON** *tabela-pai.coluna_chave* **=**
-    *tabela-filha.coluna_chave*;  
-
+    `SELECT (colunas consultadas das duas tabelas), tabela-pai.coluna_chave     FROM tabela-pai(A ESQUERDA) LEFT JOIN tabela-filha(A DIREITA)     ON tabela-pai.coluna_chave = tabela-filha.coluna_chave;`
 2.  **LEFT JOIN** + **WHERE NULL**  
-    - Pode ser usado em conjunto com filtro **WHERE** procurando valores
-    **NULL** para achar registros sem relação entre tabelas.  
+    - Pode ser usado em conjunto com filtro `WHERE` procurando valores
+    `NULL` para achar registros sem relação entre tabelas.  
     ex.: pedidos sem cliente ou clientes sem pedidos.  
     - Sintaxe:  
-    **SELECT** (colunas consultadas das duas tabelas),
-    *tabela-pai.coluna_chave*  
-    **FROM** *tabela-pai(A ESQUERDA)* **LEFT JOIN** *tabela-filha(A
-    DIREITA)*  
-    **ON** *tabela-pai.coluna_chave* **=**
-    *tabela-filha.coluna_chave*;  
-    **WHERE** (coluna_procurada ou *coluna_chave*) = **NULL**  
+    `SELECT (colunas consultadas das duas tabelas), tabela-pai.coluna_chave     FROM tabela-pai(A ESQUERDA) LEFT JOIN tabela-filha(A DIREITA)     ON tabela-pai.coluna_chave = tabela-filha.coluna_chave;     WHERE (coluna_procurada ou coluna_chave) = NULL`
 
-### Outros tipos de operador **JOIN**
+## Outros tipos de operador **JOIN**
 
-Esses outros operadores não tem suporte no SQLite, porem tem nos outros
-banco de dados.  
+Esses outros operadores não tem suporte no **SQLite**, porem tem nos
+outros banco de dados.  
 
-1.  **RIGHT JOIN** - Mescla duas tabelas, uma há direita.  
+1.  `RIGHT JOIN` - Mescla duas tabelas, uma há direita.  
     - Mantem todos os registros da tabela da direita.  
-    - Diferente do **INNER JOIN**, não omite registros. Registros sem
-    associação entre as tabelas recebe valor **NULL**.  
+    - Diferente do `INNER JOIN`, não omite registros. Registros sem
+    associação entre as tabelas recebe valor `NULL`.  
 
-2.  **OUTER JOIN** - **OUTER JOIN** é um operador de associação externa
+2.  `OUTER JOIN` - `OUTER JOIN` é um operador de associação externa
     completa.  
     - Inclui todos os registros das duas tabelas.  
-    - Executa o **LEFT JOIN** e o **RIGHT JOIN** simultanemente.  
+    - Executa o `LEFT JOIN` e o `RIGHT JOIN` simultanemente.  
     - Busca registros orfãs nas duas direções.  
 
-### Associando várias tabelas
+## Associando várias tabelas
 
-1.  Associação de diversas tabelas **INNER JOIN**  
+1.  Associação de diversas tabelas `INNER JOIN`  
     - Associa três ou mais tabelas atraves de colunas *CHAVES*, entre
     elas.  
     - Podem haver diversos tipos de relacionamentos entre as tabelas,
@@ -335,44 +320,26 @@ banco de dados.
     - O importante é identificar os relacionamentos entre tabelas para
     poder mescla-las.  
     - Sintaxe:  
-    **SELECT**  
-    (colunas que deseja obter),  
-    *tabela.coluna_chave1*,  
-    *tabela.coluna_chave2*,  
-    …  
-    **FROM** *tabela1*  
-    **INNER JOIN** *tabela2*  
-    **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*  
-    **INNER JOIN** *tabela3*  
-    **ON** *tabela2.coluna_chave2* **=** *tabela3.coluna_chave2*  
+    `SELECT     (colunas que deseja obter),     tabela.coluna_chave1,     tabela.coluna_chave2,     ...     FROM tabela1     INNER JOIN tabela2     ON tabela1.coluna_chave1 = tabela2.coluna_chave1     INNER JOIN tabela3     ON tabela2.coluna_chave2 = tabela3.coluna_chave2`
 
-2.  Agrupando **JOIN**s  
-    - Apenas adicionar GROUP_BY ao final.  
+2.  Agrupando `JOIN`s  
+    - Apenas adicionar `GROUP_BY` ao final.  
     - Determinando quais devem ser as colunas a serem agrupadas.  
     - Por conseguencia é possivel usar as funções de agrupamento para
     conseguir novas informações.  
     - Sintaxe:  
-    **SELECT**  
-    *coluna1*,  
-    *coluna2*,  
-    …  
-    **FROM** *tabela1*  
-    **INNER JOIN** *tabela2*  
-    **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*  
-    **INNER JOIN** *tabela3*  
-    **ON** *tabela2.coluna_chave2* **=** *tabela3.coluna_chave2*  
-    **GROUP BY** *coluna1*, *coluna 2* *(ou 1, 2)*  
+    `SELECT     coluna1,     coluna2,     ...     FROM tabela1     INNER JOIN tabela2     ON tabela1.coluna_chave1 = tabela2.coluna_chave1     INNER JOIN tabela3     ON tabela2.coluna_chave2 = tabela3.coluna_chave2     GROUP BY coluna1, coluna 2 (ou 1, 2)`
 
-3.  Associação de diversos **LEFT JOIN**s  
-    - É simples, basta ao inves de usar **INNER JOIN**, utilizar **LEFT
-    JOIN**.  
+3.  Associação de diversos `LEFT JOIN`s  
+    - É simples, basta ao inves de usar `INNER JOIN`, utilizar
+    `LEFT JOIN`.  
     - Utilizado para mostrar todos os registros da mescla de tabelas.  
     - A sintaxe é basicamente a mesma da *associação de diversos*
-    **INNER JOIN**.  
+    `INNER JOIN`.  
 
-## Capitulo 9 - Design de banco de dados
+# CAPÍTULO 9 - DESIGN DE BANCO DE DADOS
 
-### Planejando um banco de dados
+## Planejando um banco de dados
 
 -   O design de banco de dados serve para **criar** novas tabelas, assim
     como **inserir**, **atualizar** e **excluir** registros.  
@@ -413,7 +380,7 @@ banco de dados.
 -   SQLite tem poucos recursos de segurança, porem os bancos de dados
     centralizados lidam com essas áreas.  
 
-### Chave Primaria e Chave Externa
+## Chave Primaria e Chave Externa
 
 1.  Chave Primaria:
 
@@ -441,7 +408,7 @@ banco de dados.
 -   A chave externa e a chave primaria não precisam compartilhar o mesmo
     nome.  
 
-### Esquema
+## Esquema
 
 Dicas para montar e analisar esquematicos:  
 - O diagrama exibe as tabelas, as colunas e os relacinamentos.  
@@ -453,11 +420,11 @@ tabelas-filha.
 - Para notar se esta bem *normalizado* o banco de dados, verificar se as
 chaves primarias/externas estão sendo usadas de maneira eficientes.  
 
-### Criando um novo banco de dados
+## Criando um novo banco de dados
 
 -   Extensão de banco de dados “.db”.
 
-#### Criando TABLE
+## Criando TABLE
 
 Criação de tabelas.  
 
@@ -510,7 +477,7 @@ Criação de tabelas.
     -   **AUTOINCREMENT**  
         Adiciona valores automaticamente no registro.  
 
-### Criando VIEWS
+## Criando VIEWS
 
 -   Quando salvamos uma consulta em um banco de dados, ela se chama
     *view*.  
@@ -531,12 +498,12 @@ Criação de tabelas.
     **ON** *tabela1.coluna_chave1* **=** *tabela2.coluna_chave1*  
     …;  
 
-## Capitulo 10 - Gerenciando dados
+# Capitulo 10 - GERENCIANDO DADOS
 
 As principais ações do gerenciamento de dados são inserir, excluir e
 atualizar registros.  
 
-### **INSERT**
+## **INSERT**
 
 -   **INSERT**  
     -   O comando serve para inserir registros no banco de dados.  
@@ -569,7 +536,7 @@ atualizar registros.
     -   Se for inserido um registro em que a *chave externa* esteja
         errada, registro orfão, o registro não será aceito.  
 
-### **DELETE**
+## **DELETE**
 
 -   **DELETE**  
     -   Deleta todos os registros de uma determinada tabela.  
@@ -587,7 +554,7 @@ tabela é pela instrução **TRUNCATE TABLE**.
 Ex. Sintaxe:  
 **TRUNCATE TABLE** *nome_tabela*;  
 
-### **UPDATE**
+## **UPDATE**
 
 -   **UPDATE**
     -   Modifica registros existentes.  
@@ -609,15 +576,15 @@ Ex. Sintaxe:
         **UPDATE** *tabela* **SET** *coluna* **=** *valor*  
         **WHERE** *tabela* **IN** (*lista_dos_registros*);  
 
-### **DROP TABLE**
+## **DROP TABLE**
 
 -   Deleta determinada tabela especificada.  
 -   Sintaxe:  
     **DROP TABLE** *nome_da_tabela*;  
 
-## Capitulo 11 - Tópicos especiais
+# CAPITULO 11 - TÓPICOS ESPECIAIS
 
-### Funções de data e horario
+## Funções de data e horario
 
 1.  **DATE**  
 
@@ -660,7 +627,7 @@ Ex. Sintaxe:
 -   Sintaxe:  
     **DATETIME** (‘*aaaa-mm-dd hh:mm:ss*’,‘**+1 day**’, ‘**-3 hour**’)  
 
-### Transações
+## Transações
 
 -   É uma instrução que só executa as instruções dentro dela, no caso
     (**INSERT**, **UPDATE**, **DELETE**), apenas se todas as instruções
@@ -682,7 +649,7 @@ Ex. Sintaxe:
     **WHERE** *tabela* **IN** (*lista_dos_registros_a_modificar*)  
     **END TRANSACTION**  
 
-# Andamento dos Estudos
+# ANDAMENTO DOS ESTUDOS
 
 Concluído.  
 
